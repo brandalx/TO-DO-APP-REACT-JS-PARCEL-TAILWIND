@@ -27205,7 +27205,8 @@ const Card = (props)=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
         children: [
             " This is Card container ",
-            props.children
+            props.children,
+            " here is the end of card container"
         ]
     }, void 0, true, {
         fileName: "src/components/Card.jsx",
@@ -27486,8 +27487,9 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 const Main = (props)=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
         children: [
-            " This is Body container ",
-            props.children
+            " This is Main container ",
+            props.children,
+            " here Main container ends"
         ]
     }, void 0, true, {
         fileName: "src/components/Main.jsx",
