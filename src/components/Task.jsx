@@ -1,4 +1,4 @@
 const Task = () => {
-  return <h1> This is Task container </h1>
+  return <div> This is Task container </div>
 }
 export default Task

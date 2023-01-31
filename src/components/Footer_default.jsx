@@ -1,4 +1,4 @@
 const Footer_default = () => {
-  return <h1> This is Footer default container</h1>
+  return <div> This is Footer default container</div>
 }
 export default Footer_default

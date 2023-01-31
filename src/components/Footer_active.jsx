@@ -1,4 +1,4 @@
 const Footer_active = () => {
-  return <h1> This is Footer active container</h1>
+  return <div> This is Footer active container</div>
 }
 export default Footer_active
