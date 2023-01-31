@@ -259,4 +259,13 @@ img, video {
   }
 }
 
+.max-w-xl {
+  max-width: 36rem;
+}
+
+.text-orange-400 {
+  --tw-text-opacity: 1;
+  color: rgb(251 146 60 / var(--tw-text-opacity));
+}
+
 /*# sourceMappingURL=index.ebeadb08.css.map */
