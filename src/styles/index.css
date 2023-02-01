@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .placeholder-style::placeholder {
+    padding-left: 5px;
+    background: none;
+  }
+  .placeholder-style:focus {
+    padding-left: 5px;
+  }
+}
