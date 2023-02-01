@@ -10,7 +10,7 @@ const Task = () => {
             name='interests'
             value='task'
           />
-          <label htmlFor='task' className='m-0  text-base font-medium'>
+          <label htmlFor='task' className='m-0  text-base font-normal'>
             Display a list of tasks
           </label>
         </div>

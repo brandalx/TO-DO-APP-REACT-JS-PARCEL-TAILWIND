@@ -27540,7 +27540,7 @@ const Task = ()=>{
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
                             htmlFor: "task",
-                            className: "m-0 text-base font-medium",
+                            className: "m-0 text-base font-normal",
                             children: "Display a list of tasks"
                         }, void 0, false, {
                             fileName: "src/components/Task.jsx",
