@@ -1,9 +1,15 @@
 const Task = () => {
   return (
-    <div className='pl-4 pr-4'>
+    <div className='px-4 '>
       <div className=' flex  h-14 items-center justify-between rounded-lg border-2 border-gray-200 p-2 '>
         <div className='w-full '>
-          <input className='m-4  ' type='checkbox' id='task' name='interests' value='task' />
+          <input
+            className='form-checkbox m-4 rounded-[4px] border-2 border-gray-200  '
+            type='checkbox'
+            id='task'
+            name='interests'
+            value='task'
+          />
           <label htmlFor='task' className='m-0  text-base font-medium'>
             Display a list of tasks
           </label>

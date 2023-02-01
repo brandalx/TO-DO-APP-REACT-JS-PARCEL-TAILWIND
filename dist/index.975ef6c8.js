@@ -27212,7 +27212,7 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 const Card = (props)=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "mx-auto w-full max-w-xl space-y-4 rounded-lg shadow-xl",
+        className: "mx-auto w-full max-w-xl space-y-4 rounded-lg bg-white shadow-xl",
         children: props.children
     }, void 0, false, {
         fileName: "src/components/Card.jsx",
@@ -27520,7 +27520,7 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 const Task = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "pl-4 pr-4",
+        className: "px-4 ",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             className: " flex h-14 items-center justify-between rounded-lg border-2 border-gray-200 p-2 ",
             children: [
@@ -27528,7 +27528,7 @@ const Task = ()=>{
                     className: "w-full ",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                            className: "m-4 ",
+                            className: "form-checkbox m-4 rounded-[4px] border-2 border-gray-200 ",
                             type: "checkbox",
                             id: "task",
                             name: "interests",
@@ -27544,7 +27544,7 @@ const Task = ()=>{
                             children: "Display a list of tasks"
                         }, void 0, false, {
                             fileName: "src/components/Task.jsx",
-                            lineNumber: 7,
+                            lineNumber: 13,
                             columnNumber: 11
                         }, undefined)
                     ]
@@ -27568,22 +27568,22 @@ const Task = ()=>{
                                 fill: "black"
                             }, void 0, false, {
                                 fileName: "src/components/Task.jsx",
-                                lineNumber: 14,
+                                lineNumber: 20,
                                 columnNumber: 15
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/Task.jsx",
-                            lineNumber: 13,
+                            lineNumber: 19,
                             columnNumber: 13
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/Task.jsx",
-                        lineNumber: 12,
+                        lineNumber: 18,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/Task.jsx",
-                    lineNumber: 11,
+                    lineNumber: 17,
                     columnNumber: 9
                 }, undefined)
             ]
