@@ -27200,7 +27200,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./components/Card":"lWrQs","./components/Main":"cL6ru","./components/Task":"bxGUs","./components/Footer_active":"4x8W9","./components/Footer_default":"chZJa","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/Header":"knC38"}],"lWrQs":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./components/Card":"lWrQs","./components/Header":"knC38","./components/Main":"cL6ru","./components/Task":"bxGUs","./components/Footer_active":"4x8W9","./components/Footer_default":"chZJa","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lWrQs":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$76e8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27212,7 +27212,7 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 const Card = (props)=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "mx-auto w-full max-w-xl space-y-4 shadow-xl",
+        className: "mx-auto w-full max-w-xl space-y-4 rounded-lg shadow-xl",
         children: props.children
     }, void 0, false, {
         fileName: "src/components/Card.jsx",
@@ -27393,7 +27393,88 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"3d3497dab44d03da":"786KC"}],"cL6ru":[function(require,module,exports) {
+},{"3d3497dab44d03da":"786KC"}],"knC38":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$e807 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$e807.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Header = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
+        className: "flex h-20 items-center justify-between rounded-t-lg bg-blue-50 p-2",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+            action: "submit",
+            className: "mx-2 flex w-full items-center justify-between rounded-[6px] border-2 border-gray-300 bg-white ",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                    className: " placeholder-style h-12 w-full rounded-[6px] bg-none focus:outline-none ",
+                    type: "text",
+                    placeholder: "New task..."
+                }, void 0, false, {
+                    fileName: "src/components/Header.jsx",
+                    lineNumber: 8,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    className: " mr-2 flex h-8 w-8 items-center rounded-[6px] bg-blue-600 transition-all hover:bg-blue-500",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: " mx-auto",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
+                            width: "12",
+                            height: "12",
+                            viewBox: "0 0 12 12",
+                            fill: "none",
+                            xmlns: "http://www.w3.org/2000/svg",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                                d: "M6.75 0.75C6.75 0.551088 6.67098 0.360322 6.53033 0.21967C6.38968 0.0790175 6.19891 0 6 0C5.80109 0 5.61032 0.0790175 5.46967 0.21967C5.32902 0.360322 5.25 0.551088 5.25 0.75V5.25H0.75C0.551088 5.25 0.360322 5.32902 0.21967 5.46967C0.0790175 5.61032 0 5.80109 0 6C0 6.19891 0.0790175 6.38968 0.21967 6.53033C0.360322 6.67098 0.551088 6.75 0.75 6.75H5.25V11.25C5.25 11.4489 5.32902 11.6397 5.46967 11.7803C5.61032 11.921 5.80109 12 6 12C6.19891 12 6.38968 11.921 6.53033 11.7803C6.67098 11.6397 6.75 11.4489 6.75 11.25V6.75H11.25C11.4489 6.75 11.6397 6.67098 11.7803 6.53033C11.921 6.38968 12 6.19891 12 6C12 5.80109 11.921 5.61032 11.7803 5.46967C11.6397 5.32902 11.4489 5.25 11.25 5.25H6.75V0.75Z",
+                                fill: "white"
+                            }, void 0, false, {
+                                fileName: "src/components/Header.jsx",
+                                lineNumber: 16,
+                                columnNumber: 15
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/components/Header.jsx",
+                            lineNumber: 15,
+                            columnNumber: 13
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/components/Header.jsx",
+                        lineNumber: 14,
+                        columnNumber: 11
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/components/Header.jsx",
+                    lineNumber: 13,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/Header.jsx",
+            lineNumber: 4,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/components/Header.jsx",
+        lineNumber: 3,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Header;
+exports.default = Header;
+var _c;
+$RefreshReg$(_c, "Header");
+
+  $parcel$ReactRefreshHelpers$e807.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cL6ru":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$4cf4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27539,11 +27620,26 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 const Footer_active = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: " This is Footer active container"
+        className: "mx-auto flex h-10 items-center ",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "mx-auto",
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                className: "text-center text-gray-400",
+                children: "Made 4 out of 6"
+            }, void 0, false, {
+                fileName: "src/components/Footer_active.jsx",
+                lineNumber: 5,
+                columnNumber: 9
+            }, undefined)
+        }, void 0, false, {
+            fileName: "src/components/Footer_active.jsx",
+            lineNumber: 4,
+            columnNumber: 7
+        }, undefined)
     }, void 0, false, {
         fileName: "src/components/Footer_active.jsx",
-        lineNumber: 2,
-        columnNumber: 10
+        lineNumber: 3,
+        columnNumber: 5
     }, undefined);
 };
 _c = Footer_active;
@@ -27581,87 +27677,6 @@ var _c;
 $RefreshReg$(_c, "Footer_default");
 
   $parcel$ReactRefreshHelpers$66aa.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"knC38":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$e807 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$e807.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Header = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
-        className: "flex h-20 items-center justify-between rounded-t-lg bg-blue-50 p-2",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
-            action: "submit",
-            className: "mx-2 flex w-full items-center justify-between rounded-[6px] border-2 border-gray-300 bg-white ",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                    className: " placeholder-style h-12 w-full rounded-[6px] bg-none focus:outline-none ",
-                    type: "text",
-                    placeholder: "New task..."
-                }, void 0, false, {
-                    fileName: "src/components/Header.jsx",
-                    lineNumber: 8,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                    className: " mr-2 flex h-8 w-8 items-center rounded-[6px] bg-blue-600 transition-all hover:bg-blue-500",
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: " mx-auto",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
-                            width: "12",
-                            height: "12",
-                            viewBox: "0 0 12 12",
-                            fill: "none",
-                            xmlns: "http://www.w3.org/2000/svg",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
-                                d: "M6.75 0.75C6.75 0.551088 6.67098 0.360322 6.53033 0.21967C6.38968 0.0790175 6.19891 0 6 0C5.80109 0 5.61032 0.0790175 5.46967 0.21967C5.32902 0.360322 5.25 0.551088 5.25 0.75V5.25H0.75C0.551088 5.25 0.360322 5.32902 0.21967 5.46967C0.0790175 5.61032 0 5.80109 0 6C0 6.19891 0.0790175 6.38968 0.21967 6.53033C0.360322 6.67098 0.551088 6.75 0.75 6.75H5.25V11.25C5.25 11.4489 5.32902 11.6397 5.46967 11.7803C5.61032 11.921 5.80109 12 6 12C6.19891 12 6.38968 11.921 6.53033 11.7803C6.67098 11.6397 6.75 11.4489 6.75 11.25V6.75H11.25C11.4489 6.75 11.6397 6.67098 11.7803 6.53033C11.921 6.38968 12 6.19891 12 6C12 5.80109 11.921 5.61032 11.7803 5.46967C11.6397 5.32902 11.4489 5.25 11.25 5.25H6.75V0.75Z",
-                                fill: "white"
-                            }, void 0, false, {
-                                fileName: "src/components/Header.jsx",
-                                lineNumber: 16,
-                                columnNumber: 15
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "src/components/Header.jsx",
-                            lineNumber: 15,
-                            columnNumber: 13
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "src/components/Header.jsx",
-                        lineNumber: 14,
-                        columnNumber: 11
-                    }, undefined)
-                }, void 0, false, {
-                    fileName: "src/components/Header.jsx",
-                    lineNumber: 13,
-                    columnNumber: 9
-                }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "src/components/Header.jsx",
-            lineNumber: 4,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/components/Header.jsx",
-        lineNumber: 3,
-        columnNumber: 5
-    }, undefined);
-};
-_c = Header;
-exports.default = Header;
-var _c;
-$RefreshReg$(_c, "Header");
-
-  $parcel$ReactRefreshHelpers$e807.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
