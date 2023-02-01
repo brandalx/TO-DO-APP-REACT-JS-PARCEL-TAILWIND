@@ -1,4 +1,4 @@
 const Main = (props) => {
-  return <div> This is Main container {props.children} here Main container ends</div>
+  return <div className=' space-y-4 '> {props.children} </div>
 }
 export default Main

@@ -10,6 +10,7 @@ export function App() {
       <Header />
       <Main>
         <Task />
+        <Task />
       </Main>
       <Footer_active />
       <Footer_default />
