@@ -27134,6 +27134,7 @@ $parcel$ReactRefreshHelpers$2430.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+// import Footer_default from './components/Footer_default'
 parcelHelpers.export(exports, "App", ()=>App);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _card = require("./components/Card");
@@ -27146,8 +27147,6 @@ var _task = require("./components/Task");
 var _taskDefault = parcelHelpers.interopDefault(_task);
 var _footerActive = require("./components/Footer_active");
 var _footerActiveDefault = parcelHelpers.interopDefault(_footerActive);
-var _footerDefault = require("./components/Footer_default");
-var _footerDefaultDefault = parcelHelpers.interopDefault(_footerDefault);
 function App() {
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default), {
         children: [
@@ -27177,11 +27176,6 @@ function App() {
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerActiveDefault.default), {}, void 0, false, {
                 fileName: "src/App.jsx",
                 lineNumber: 15,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefaultDefault.default), {}, void 0, false, {
-                fileName: "src/App.jsx",
-                lineNumber: 16,
                 columnNumber: 7
             }, this)
         ]
@@ -27664,11 +27658,26 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 const Footer_default = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: " This is Footer default container"
+        className: "mx-auto flex h-20 items-center ",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "mx-auto",
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                className: "text-center text-gray-400",
+                children: "No tasks yet"
+            }, void 0, false, {
+                fileName: "src/components/Footer_default.jsx",
+                lineNumber: 5,
+                columnNumber: 9
+            }, undefined)
+        }, void 0, false, {
+            fileName: "src/components/Footer_default.jsx",
+            lineNumber: 4,
+            columnNumber: 7
+        }, undefined)
     }, void 0, false, {
         fileName: "src/components/Footer_default.jsx",
-        lineNumber: 2,
-        columnNumber: 10
+        lineNumber: 3,
+        columnNumber: 5
     }, undefined);
 };
 _c = Footer_default;
