@@ -143,8 +143,8 @@
     }
   }
 })({"1xC6H":[function(require,module,exports) {
-var Refresh = require("388d60165d410c5d");
-var ErrorOverlay = require("bc5121ff6551110f");
+var Refresh = require("c286218b2b23c4d2");
+var ErrorOverlay = require("523eb1ea9313f755");
 Refresh.injectIntoGlobalHook(window);
 window.$RefreshReg$ = function() {};
 window.$RefreshSig$ = function() {
@@ -163,11 +163,11 @@ window.addEventListener("parcelhmraccept", ()=>{
     ErrorOverlay.dismissRuntimeErrors();
 });
 
-},{"388d60165d410c5d":"786KC","bc5121ff6551110f":"1dldy"}],"786KC":[function(require,module,exports) {
+},{"c286218b2b23c4d2":"786KC","523eb1ea9313f755":"1dldy"}],"786KC":[function(require,module,exports) {
 "use strict";
-module.exports = require("e75dcdce599a9839");
+module.exports = require("7593e5270b53327b");
 
-},{"e75dcdce599a9839":"hdge7"}],"hdge7":[function(require,module,exports) {
+},{"7593e5270b53327b":"hdge7"}],"hdge7":[function(require,module,exports) {
 /** @license React v0.9.0
  * react-refresh-runtime.development.js
  *
@@ -628,7 +628,7 @@ module.exports = require("e75dcdce599a9839");
 })();
 
 },{}],"1dldy":[function(require,module,exports) {
-var process = require("77058aee9a6e5198");
+var process = require("ef18d5b122ceafc4");
 !function(e, t) {
     module.exports = t();
 }(window, function() {
@@ -2358,7 +2358,7 @@ var process = require("77058aee9a6e5198");
     ]);
 });
 
-},{"77058aee9a6e5198":"d5jf4"}],"d5jf4":[function(require,module,exports) {
+},{"ef18d5b122ceafc4":"d5jf4"}],"d5jf4":[function(require,module,exports) {
 // shim for using process in browser
 var process = module.exports = {};
 // cached from whatever global is present so that test runners that stub it
@@ -2942,9 +2942,9 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _app.App), {}, void 0, 
 }
 },{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./App":"e9Zfo","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
 "use strict";
-module.exports = require("f94ae6a0524a1509");
+module.exports = require("bdc1c0e74c3e29d6");
 
-},{"f94ae6a0524a1509":"48uCM"}],"48uCM":[function(require,module,exports) {
+},{"bdc1c0e74c3e29d6":"48uCM"}],"48uCM":[function(require,module,exports) {
 /**
  * @license React
  * react-jsx-dev-runtime.development.js
@@ -2956,7 +2956,7 @@ module.exports = require("f94ae6a0524a1509");
  */ "use strict";
 (function() {
     "use strict";
-    var React = require("588cb76b2c3f7069");
+    var React = require("c4a86b1639e6902d");
     // ATTENTION
     // When adding new symbols to this file,
     // Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
@@ -3775,11 +3775,11 @@ module.exports = require("f94ae6a0524a1509");
     exports.jsxDEV = jsxDEV$1;
 })();
 
-},{"588cb76b2c3f7069":"21dqq"}],"21dqq":[function(require,module,exports) {
+},{"c4a86b1639e6902d":"21dqq"}],"21dqq":[function(require,module,exports) {
 "use strict";
-module.exports = require("25bba63f2bd86e14");
+module.exports = require("5d298dd980ffe5f");
 
-},{"25bba63f2bd86e14":"6YvXz"}],"6YvXz":[function(require,module,exports) {
+},{"5d298dd980ffe5f":"6YvXz"}],"6YvXz":[function(require,module,exports) {
 /**
  * @license React
  * react.development.js
@@ -5647,7 +5647,7 @@ module.exports = require("25bba63f2bd86e14");
 
 },{}],"lOjBx":[function(require,module,exports) {
 "use strict";
-var m = require("a2a0a54cbaadbe1");
+var m = require("2b1bf18072a7b01f");
 var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
 exports.createRoot = function(c, o) {
     i.usingClientEntryPoint = true;
@@ -5666,7 +5666,7 @@ exports.hydrateRoot = function(c, h, o) {
     }
 };
 
-},{"a2a0a54cbaadbe1":"j6uA9"}],"j6uA9":[function(require,module,exports) {
+},{"2b1bf18072a7b01f":"j6uA9"}],"j6uA9":[function(require,module,exports) {
 "use strict";
 function checkDCE() {
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === "undefined" || typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== "function") return;
@@ -5680,9 +5680,9 @@ function checkDCE() {
     // a false positive.
     throw new Error("^_^");
 }
-module.exports = require("e7c79b88cf0a8e4f");
+module.exports = require("9caf6e72372e4377");
 
-},{"e7c79b88cf0a8e4f":"3iA9v"}],"3iA9v":[function(require,module,exports) {
+},{"9caf6e72372e4377":"3iA9v"}],"3iA9v":[function(require,module,exports) {
 /**
  * @license React
  * react-dom.development.js
@@ -5695,8 +5695,8 @@ module.exports = require("e7c79b88cf0a8e4f");
 (function() {
     "use strict";
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
-    var React = require("424c3ae03a7c6e4a");
-    var Scheduler = require("9e7345dbe3ba566e");
+    var React = require("10cf735376ba9fb9");
+    var Scheduler = require("99179ce574cfd27b");
     var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
     var suppressWarning = false;
     function setSuppressWarning(newSuppressWarning) {
@@ -26667,11 +26667,11 @@ module.exports = require("e7c79b88cf0a8e4f");
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 })();
 
-},{"424c3ae03a7c6e4a":"21dqq","9e7345dbe3ba566e":"juvHo"}],"juvHo":[function(require,module,exports) {
+},{"10cf735376ba9fb9":"21dqq","99179ce574cfd27b":"juvHo"}],"juvHo":[function(require,module,exports) {
 "use strict";
-module.exports = require("c5766cf99f3c8006");
+module.exports = require("3ea2dc6ca6ca5526");
 
-},{"c5766cf99f3c8006":"RqdIf"}],"RqdIf":[function(require,module,exports) {
+},{"3ea2dc6ca6ca5526":"RqdIf"}],"RqdIf":[function(require,module,exports) {
 /**
  * @license React
  * scheduler.development.js
@@ -27147,44 +27147,58 @@ var _task = require("./components/Task");
 var _taskDefault = parcelHelpers.interopDefault(_task);
 var _footerActive = require("./components/Footer_active");
 var _footerActiveDefault = parcelHelpers.interopDefault(_footerActive);
+var _react = require("react");
+var _s = $RefreshSig$();
 function App() {
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default), {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
-                fileName: "src/App.jsx",
-                lineNumber: 10,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainDefault.default), {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _taskDefault.default), {}, void 0, false, {
-                        fileName: "src/App.jsx",
-                        lineNumber: 12,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _taskDefault.default), {}, void 0, false, {
-                        fileName: "src/App.jsx",
-                        lineNumber: 13,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/App.jsx",
-                lineNumber: 11,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerActiveDefault.default), {}, void 0, false, {
-                fileName: "src/App.jsx",
-                lineNumber: 15,
-                columnNumber: 7
-            }, this)
-        ]
-    }, void 0, true, {
-        fileName: "src/App.jsx",
-        lineNumber: 9,
-        columnNumber: 5
-    }, this);
+    _s();
+    const [taskList, setTaskList] = (0, _react.useState)([
+        "test1",
+        "test2"
+    ]);
+    // setTaskList([...taskList, taskName])
+    const doSubmit = (task)=>{
+        setTaskList([
+            ...taskList,
+            task
+        ]);
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default), {
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {
+                    onSubmit: doSubmit
+                }, void 0, false, {
+                    fileName: "src/App.jsx",
+                    lineNumber: 19,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainDefault.default), {
+                    children: taskList.map((task, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _taskDefault.default), {
+                            name: task
+                        }, index, false, {
+                            fileName: "src/App.jsx",
+                            lineNumber: 23,
+                            columnNumber: 13
+                        }, this))
+                }, void 0, false, {
+                    fileName: "src/App.jsx",
+                    lineNumber: 20,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerActiveDefault.default), {}, void 0, false, {
+                    fileName: "src/App.jsx",
+                    lineNumber: 26,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "src/App.jsx",
+            lineNumber: 18,
+            columnNumber: 7
+        }, this)
+    }, void 0, false);
 }
+_s(App, "diKw8WohqCXIHiHRGo8mWIgBx4s=");
 _c = App;
 var _c;
 $RefreshReg$(_c, "App");
@@ -27194,7 +27208,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./components/Card":"lWrQs","./components/Header":"knC38","./components/Main":"cL6ru","./components/Task":"bxGUs","./components/Footer_active":"4x8W9","./components/Footer_default":"chZJa","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lWrQs":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./components/Card":"lWrQs","./components/Header":"knC38","./components/Main":"cL6ru","./components/Task":"bxGUs","./components/Footer_active":"4x8W9","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lWrQs":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$76e8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27256,7 +27270,7 @@ exports.export = function(dest, destName, get) {
 
 },{}],"km3Ru":[function(require,module,exports) {
 "use strict";
-var Refresh = require("3d3497dab44d03da");
+var Refresh = require("133a8009bf15fc59");
 function debounce(func, delay) {
     {
         let timeout = undefined;
@@ -27387,7 +27401,7 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"3d3497dab44d03da":"786KC"}],"knC38":[function(require,module,exports) {
+},{"133a8009bf15fc59":"786KC"}],"knC38":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$e807 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27397,67 +27411,83 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Header = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
-        className: "flex h-20 items-center justify-between rounded-t-lg bg-blue-50 p-2",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
-            action: "submit",
-            className: "mx-2 flex w-full items-center justify-between rounded-[6px] border-2 border-gray-300 bg-white ",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                    className: " placeholder-style h-12 w-full rounded-[6px] bg-none focus:outline-none ",
-                    type: "text",
-                    placeholder: "New task..."
-                }, void 0, false, {
-                    fileName: "src/components/Header.jsx",
-                    lineNumber: 8,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                    className: " mr-2 flex h-8 w-8 items-center rounded-[6px] bg-blue-600 transition-all hover:bg-blue-500",
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: " mx-auto",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
-                            width: "12",
-                            height: "12",
-                            viewBox: "0 0 12 12",
-                            fill: "none",
-                            xmlns: "http://www.w3.org/2000/svg",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
-                                d: "M6.75 0.75C6.75 0.551088 6.67098 0.360322 6.53033 0.21967C6.38968 0.0790175 6.19891 0 6 0C5.80109 0 5.61032 0.0790175 5.46967 0.21967C5.32902 0.360322 5.25 0.551088 5.25 0.75V5.25H0.75C0.551088 5.25 0.360322 5.32902 0.21967 5.46967C0.0790175 5.61032 0 5.80109 0 6C0 6.19891 0.0790175 6.38968 0.21967 6.53033C0.360322 6.67098 0.551088 6.75 0.75 6.75H5.25V11.25C5.25 11.4489 5.32902 11.6397 5.46967 11.7803C5.61032 11.921 5.80109 12 6 12C6.19891 12 6.38968 11.921 6.53033 11.7803C6.67098 11.6397 6.75 11.4489 6.75 11.25V6.75H11.25C11.4489 6.75 11.6397 6.67098 11.7803 6.53033C11.921 6.38968 12 6.19891 12 6C12 5.80109 11.921 5.61032 11.7803 5.46967C11.6397 5.32902 11.4489 5.25 11.25 5.25H6.75V0.75Z",
-                                fill: "white"
+var _react = require("react");
+var _s = $RefreshSig$();
+const Header = ({ onSubmit  })=>{
+    _s();
+    const [taskName, setTaskName] = (0, _react.useState)();
+    const doSubmit = (e)=>{
+        e.preventDefault();
+        onSubmit(taskName);
+        setTaskName(" ");
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
+            className: "flex h-20 items-center justify-between rounded-t-lg bg-blue-50 p-2",
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+                onSubmit: doSubmit,
+                action: "#",
+                className: "mx-2 flex w-full items-center justify-between rounded-[6px] border-2 border-gray-300 bg-white ",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        value: taskName,
+                        onChange: (event)=>setTaskName(event.target.value),
+                        className: " placeholder-style h-12 w-full rounded-[6px] bg-none focus:outline-none ",
+                        type: "text",
+                        placeholder: "New task..."
+                    }, void 0, false, {
+                        fileName: "src/components/Header.jsx",
+                        lineNumber: 19,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        type: "submit",
+                        className: " mr-2 flex h-8 w-8 items-center rounded-[6px] bg-blue-600 transition-all hover:bg-blue-500",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: " mx-auto",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
+                                width: "12",
+                                height: "12",
+                                viewBox: "0 0 12 12",
+                                fill: "none",
+                                xmlns: "http://www.w3.org/2000/svg",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                                    d: "M6.75 0.75C6.75 0.551088 6.67098 0.360322 6.53033 0.21967C6.38968 0.0790175 6.19891 0 6 0C5.80109 0 5.61032 0.0790175 5.46967 0.21967C5.32902 0.360322 5.25 0.551088 5.25 0.75V5.25H0.75C0.551088 5.25 0.360322 5.32902 0.21967 5.46967C0.0790175 5.61032 0 5.80109 0 6C0 6.19891 0.0790175 6.38968 0.21967 6.53033C0.360322 6.67098 0.551088 6.75 0.75 6.75H5.25V11.25C5.25 11.4489 5.32902 11.6397 5.46967 11.7803C5.61032 11.921 5.80109 12 6 12C6.19891 12 6.38968 11.921 6.53033 11.7803C6.67098 11.6397 6.75 11.4489 6.75 11.25V6.75H11.25C11.4489 6.75 11.6397 6.67098 11.7803 6.53033C11.921 6.38968 12 6.19891 12 6C12 5.80109 11.921 5.61032 11.7803 5.46967C11.6397 5.32902 11.4489 5.25 11.25 5.25H6.75V0.75Z",
+                                    fill: "white"
+                                }, void 0, false, {
+                                    fileName: "src/components/Header.jsx",
+                                    lineNumber: 32,
+                                    columnNumber: 17
+                                }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/Header.jsx",
-                                lineNumber: 16,
+                                lineNumber: 31,
                                 columnNumber: 15
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/Header.jsx",
-                            lineNumber: 15,
+                            lineNumber: 30,
                             columnNumber: 13
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/Header.jsx",
-                        lineNumber: 14,
+                        lineNumber: 26,
                         columnNumber: 11
                     }, undefined)
-                }, void 0, false, {
-                    fileName: "src/components/Header.jsx",
-                    lineNumber: 13,
-                    columnNumber: 9
-                }, undefined)
-            ]
-        }, void 0, true, {
+                ]
+            }, void 0, true, {
+                fileName: "src/components/Header.jsx",
+                lineNumber: 14,
+                columnNumber: 9
+            }, undefined)
+        }, void 0, false, {
             fileName: "src/components/Header.jsx",
-            lineNumber: 4,
+            lineNumber: 13,
             columnNumber: 7
         }, undefined)
-    }, void 0, false, {
-        fileName: "src/components/Header.jsx",
-        lineNumber: 3,
-        columnNumber: 5
-    }, undefined);
+    }, void 0, false);
 };
+_s(Header, "3ShPrAahrjt2ez5tJuPK/POdNG4=");
 _c = Header;
 exports.default = Header;
 var _c;
@@ -27468,7 +27498,7 @@ $RefreshReg$(_c, "Header");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cL6ru":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cL6ru":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$4cf4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27512,7 +27542,7 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Task = ()=>{
+const Task = ({ name  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "px-4 ",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27535,7 +27565,7 @@ const Task = ()=>{
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
                             htmlFor: "task",
                             className: "m-0 text-base font-normal",
-                            children: "Display a list of tasks"
+                            children: name
                         }, void 0, false, {
                             fileName: "src/components/Task.jsx",
                             lineNumber: 13,
@@ -27642,50 +27672,6 @@ var _c;
 $RefreshReg$(_c, "Footer_active");
 
   $parcel$ReactRefreshHelpers$bafb.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"chZJa":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$66aa = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$66aa.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Footer_default = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "mx-auto flex h-20 items-center ",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "mx-auto",
-            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                className: "text-center text-gray-400",
-                children: "No tasks yet"
-            }, void 0, false, {
-                fileName: "src/components/Footer_default.jsx",
-                lineNumber: 5,
-                columnNumber: 9
-            }, undefined)
-        }, void 0, false, {
-            fileName: "src/components/Footer_default.jsx",
-            lineNumber: 4,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/components/Footer_default.jsx",
-        lineNumber: 3,
-        columnNumber: 5
-    }, undefined);
-};
-_c = Footer_default;
-exports.default = Footer_default;
-var _c;
-$RefreshReg$(_c, "Footer_default");
-
-  $parcel$ReactRefreshHelpers$66aa.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
