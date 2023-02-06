@@ -1,4 +1,4 @@
-const Task = ({ name }) => {
+const Task = ({ name, index }) => {
   return (
     <div className='px-4 '>
       <div className=' flex  h-14 items-center justify-between rounded-lg border-2 border-gray-200 p-2 '>
@@ -11,7 +11,7 @@ const Task = ({ name }) => {
             value='task'
           />
           <label htmlFor='task' className='m-0  text-base font-normal'>
-            {name}
+            {index}.{name}
           </label>
         </div>
         <button className='mr-2 transition-all hover:opacity-50'>

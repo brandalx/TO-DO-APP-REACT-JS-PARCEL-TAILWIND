@@ -20,7 +20,7 @@ export function App() {
         <Main>
           {/* <div>{JSON.stringify(taskList)}</div> */}
           {taskList.map((task, index) => (
-            <Task key={index} name={task} />
+            <Task key={index} name={task} index={index + 1} />
           ))}
         </Main>
         <Footer_active />

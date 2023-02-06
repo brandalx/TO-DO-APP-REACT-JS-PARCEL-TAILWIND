@@ -27174,7 +27174,8 @@ function App() {
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainDefault.default), {
                     children: taskList.map((task, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _taskDefault.default), {
-                            name: task
+                            name: task,
+                            index: index + 1
                         }, index, false, {
                             fileName: "src/App.jsx",
                             lineNumber: 23,
@@ -27542,7 +27543,7 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Task = ({ name  })=>{
+const Task = ({ name , index  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "px-4 ",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27565,8 +27566,12 @@ const Task = ({ name  })=>{
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
                             htmlFor: "task",
                             className: "m-0 text-base font-normal",
-                            children: name
-                        }, void 0, false, {
+                            children: [
+                                index,
+                                ".",
+                                name
+                            ]
+                        }, void 0, true, {
                             fileName: "src/components/Task.jsx",
                             lineNumber: 13,
                             columnNumber: 11
