@@ -6,11 +6,11 @@ const Task = ({ name, index }) => {
           <input
             className='form-checkbox m-4 rounded-[4px] border-2 border-gray-200  '
             type='checkbox'
-            id='task'
+            id={index}
             name='interests'
-            value='task'
+            value={index}
           />
-          <label htmlFor='task' className='m-0  text-base font-normal'>
+          <label htmlFor={index} id={index} className='m-0  text-base font-normal'>
             {index}.{name}
           </label>
         </div>

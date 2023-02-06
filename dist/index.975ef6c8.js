@@ -27555,16 +27555,17 @@ const Task = ({ name , index  })=>{
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                             className: "form-checkbox m-4 rounded-[4px] border-2 border-gray-200 ",
                             type: "checkbox",
-                            id: "task",
+                            id: index,
                             name: "interests",
-                            value: "task"
+                            value: index
                         }, void 0, false, {
                             fileName: "src/components/Task.jsx",
                             lineNumber: 6,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                            htmlFor: "task",
+                            htmlFor: index,
+                            id: index,
                             className: "m-0 text-base font-normal",
                             children: [
                                 index,
