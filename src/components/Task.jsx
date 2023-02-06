@@ -1,9 +1,17 @@
-const Task = ({ name, index }) => {
+// import { useState } from 'react'
+const Task = ({ name, index, onCompleted, completed }) => {
+  // const [completed, setCompleted] = useState(false)
+  const handdleChange = () => {
+    // setCompleted(e.target.checked)
+    onCompleted(name)
+  }
   return (
     <div className='px-4 '>
       <div className=' flex  h-14 items-center justify-between rounded-lg border-2 border-gray-200 p-2 '>
         <div className='w-full '>
           <input
+            checked={completed}
+            onChange={handdleChange}
             className='form-checkbox m-4 rounded-[4px] border-2 border-gray-200  '
             type='checkbox'
             id={index}
@@ -11,7 +19,7 @@ const Task = ({ name, index }) => {
             value={index}
           />
           <label htmlFor={index} id={index} className='m-0  text-base font-normal'>
-            {index}.{name}
+            {index}.{name} is completed? {JSON.stringify(completed)}
           </label>
         </div>
         <button className='mr-2 transition-all hover:opacity-50'>

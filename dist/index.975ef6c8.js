@@ -27155,10 +27155,18 @@ function App() {
         "test1",
         "test2"
     ]);
+    const [completedtaskList, setcompletedTaskList] = (0, _react.useState)([]);
     // setTaskList([...taskList, taskName])
     const doSubmit = (task)=>{
         setTaskList([
             ...taskList,
+            task
+        ]);
+    };
+    const handleCompleted = (task)=>{
+        if (completedtaskList.includes(task)) setcompletedTaskList(completedtaskList.filter((tasks)=>tasks !== task));
+        else setcompletedTaskList([
+            ...completedtaskList,
             task
         ]);
     };
@@ -27169,37 +27177,59 @@ function App() {
                     onSubmit: doSubmit
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 19,
+                    lineNumber: 28,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainDefault.default), {
                     children: taskList.map((task, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _taskDefault.default), {
                             name: task,
-                            index: index + 1
+                            index: index + 1,
+                            onCompleted: handleCompleted,
+                            completed: completedtaskList.includes(task)
                         }, index, false, {
                             fileName: "src/App.jsx",
-                            lineNumber: 23,
+                            lineNumber: 32,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 20,
+                    lineNumber: 29,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    children: [
+                        "length is ",
+                        completedtaskList.length
+                    ]
+                }, void 0, true, {
+                    fileName: "src/App.jsx",
+                    lineNumber: 41,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    children: [
+                        "items is ",
+                        JSON.stringify(taskList)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/App.jsx",
+                    lineNumber: 42,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerActiveDefault.default), {}, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 26,
+                    lineNumber: 43,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/App.jsx",
-            lineNumber: 18,
+            lineNumber: 27,
             columnNumber: 7
         }, this)
     }, void 0, false);
 }
-_s(App, "diKw8WohqCXIHiHRGo8mWIgBx4s=");
+_s(App, "IM7GV5pCxK0sQtdwREgc4BuLYJw=");
 _c = App;
 var _c;
 $RefreshReg$(_c, "App");
@@ -27540,10 +27570,16 @@ var prevRefreshSig = window.$RefreshSig$;
 $parcel$ReactRefreshHelpers$db10.prelude(module);
 
 try {
+// import { useState } from 'react'
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Task = ({ name , index  })=>{
+const Task = ({ name , index , onCompleted , completed  })=>{
+    // const [completed, setCompleted] = useState(false)
+    const handdleChange = ()=>{
+        // setCompleted(e.target.checked)
+        onCompleted(name);
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "px-4 ",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27553,6 +27589,8 @@ const Task = ({ name , index  })=>{
                     className: "w-full ",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                            checked: completed,
+                            onChange: handdleChange,
                             className: "form-checkbox m-4 rounded-[4px] border-2 border-gray-200 ",
                             type: "checkbox",
                             id: index,
@@ -27560,7 +27598,7 @@ const Task = ({ name , index  })=>{
                             value: index
                         }, void 0, false, {
                             fileName: "src/components/Task.jsx",
-                            lineNumber: 6,
+                            lineNumber: 12,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -27570,17 +27608,19 @@ const Task = ({ name , index  })=>{
                             children: [
                                 index,
                                 ".",
-                                name
+                                name,
+                                " is completed? ",
+                                JSON.stringify(completed)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/Task.jsx",
-                            lineNumber: 13,
+                            lineNumber: 21,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/Task.jsx",
-                    lineNumber: 5,
+                    lineNumber: 11,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -27598,33 +27638,33 @@ const Task = ({ name , index  })=>{
                                 fill: "black"
                             }, void 0, false, {
                                 fileName: "src/components/Task.jsx",
-                                lineNumber: 20,
+                                lineNumber: 28,
                                 columnNumber: 15
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/Task.jsx",
-                            lineNumber: 19,
+                            lineNumber: 27,
                             columnNumber: 13
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/Task.jsx",
-                        lineNumber: 18,
+                        lineNumber: 26,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/Task.jsx",
-                    lineNumber: 17,
+                    lineNumber: 25,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/Task.jsx",
-            lineNumber: 4,
+            lineNumber: 10,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/Task.jsx",
-        lineNumber: 3,
+        lineNumber: 9,
         columnNumber: 5
     }, undefined);
 };
