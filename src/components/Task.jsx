@@ -19,7 +19,7 @@ const Task = ({ name, index, onCompleted, completed }) => {
             value={index}
           />
           <label htmlFor={index} id={index} className='m-0  text-base font-normal'>
-            {index}.{name}
+            {index}. {name}
           </label>
         </div>
         <button className='mr-2 transition-all hover:opacity-50'>

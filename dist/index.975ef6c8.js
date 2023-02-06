@@ -27585,7 +27585,7 @@ const Task = ({ name , index , onCompleted , completed  })=>{
                             className: "m-0 text-base font-normal",
                             children: [
                                 index,
-                                ".",
+                                ". ",
                                 name
                             ]
                         }, void 0, true, {
