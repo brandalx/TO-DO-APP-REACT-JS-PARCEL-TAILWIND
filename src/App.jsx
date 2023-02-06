@@ -4,13 +4,11 @@ import Main from './components/Main'
 import Task from './components/Task'
 import Footer_active from './components/Footer_active'
 import { useState } from 'react'
-// import Footer_default from './components/Footer_default'
 
 export function App() {
-  const [taskList, setTaskList] = useState(['test1', 'test2'])
+  const [taskList, setTaskList] = useState([])
   const [completedtaskList, setcompletedTaskList] = useState([])
 
-  // setTaskList([...taskList, taskName])
   const doSubmit = (task) => {
     setTaskList([...taskList, task])
   }
@@ -27,7 +25,6 @@ export function App() {
       <Card>
         <Header onSubmit={doSubmit} />
         <Main>
-          {/* <div>{JSON.stringify(taskList)}</div> */}
           {taskList.map((task, index) => (
             <Task
               key={index}
@@ -38,9 +35,7 @@ export function App() {
             />
           ))}
         </Main>
-        <div>length is {completedtaskList.length}</div>
-        <div>items is {JSON.stringify(taskList)}</div>
-        <Footer_active />
+        <Footer_active activecount={completedtaskList.length} totalcount={taskList.length} />
         {/* <Footer_default /> */}
       </Card>
     </>

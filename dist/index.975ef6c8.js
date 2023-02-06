@@ -27134,7 +27134,6 @@ $parcel$ReactRefreshHelpers$2430.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-// import Footer_default from './components/Footer_default'
 parcelHelpers.export(exports, "App", ()=>App);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _card = require("./components/Card");
@@ -27151,12 +27150,8 @@ var _react = require("react");
 var _s = $RefreshSig$();
 function App() {
     _s();
-    const [taskList, setTaskList] = (0, _react.useState)([
-        "test1",
-        "test2"
-    ]);
+    const [taskList, setTaskList] = (0, _react.useState)([]);
     const [completedtaskList, setcompletedTaskList] = (0, _react.useState)([]);
-    // setTaskList([...taskList, taskName])
     const doSubmit = (task)=>{
         setTaskList([
             ...taskList,
@@ -27177,7 +27172,7 @@ function App() {
                     onSubmit: doSubmit
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 28,
+                    lineNumber: 26,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainDefault.default), {
@@ -27188,48 +27183,31 @@ function App() {
                             completed: completedtaskList.includes(task)
                         }, index, false, {
                             fileName: "src/App.jsx",
-                            lineNumber: 32,
+                            lineNumber: 29,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 29,
+                    lineNumber: 27,
                     columnNumber: 9
                 }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    children: [
-                        "length is ",
-                        completedtaskList.length
-                    ]
-                }, void 0, true, {
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerActiveDefault.default), {
+                    activecount: completedtaskList.length,
+                    totalcount: taskList.length
+                }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 41,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    children: [
-                        "items is ",
-                        JSON.stringify(taskList)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/App.jsx",
-                    lineNumber: 42,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerActiveDefault.default), {}, void 0, false, {
-                    fileName: "src/App.jsx",
-                    lineNumber: 43,
+                    lineNumber: 38,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/App.jsx",
-            lineNumber: 27,
+            lineNumber: 25,
             columnNumber: 7
         }, this)
     }, void 0, false);
 }
-_s(App, "IM7GV5pCxK0sQtdwREgc4BuLYJw=");
+_s(App, "UNQJLRPUNNDDXbUES6YPHvJ2jTc=");
 _c = App;
 var _c;
 $RefreshReg$(_c, "App");
@@ -27450,7 +27428,7 @@ const Header = ({ onSubmit  })=>{
     const doSubmit = (e)=>{
         e.preventDefault();
         onSubmit(taskName);
-        setTaskName(" ");
+        setTaskName("");
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
@@ -27465,7 +27443,7 @@ const Header = ({ onSubmit  })=>{
                         onChange: (event)=>setTaskName(event.target.value),
                         className: " placeholder-style h-12 w-full rounded-[6px] bg-none focus:outline-none ",
                         type: "text",
-                        placeholder: "New task..."
+                        placeholder: "Write new task here..."
                     }, void 0, false, {
                         fileName: "src/components/Header.jsx",
                         lineNumber: 19,
@@ -27608,9 +27586,7 @@ const Task = ({ name , index , onCompleted , completed  })=>{
                             children: [
                                 index,
                                 ".",
-                                name,
-                                " is completed? ",
-                                JSON.stringify(completed)
+                                name
                             ]
                         }, void 0, true, {
                             fileName: "src/components/Task.jsx",
@@ -27688,15 +27664,20 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Footer_active = ()=>{
+const Footer_active = ({ activecount , totalcount  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "mx-auto flex h-10 items-center ",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             className: "mx-auto",
             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                 className: "text-center text-gray-400",
-                children: "Made 4 out of 6"
-            }, void 0, false, {
+                children: [
+                    "Made ",
+                    activecount,
+                    " out of ",
+                    totalcount
+                ]
+            }, void 0, true, {
                 fileName: "src/components/Footer_active.jsx",
                 lineNumber: 5,
                 columnNumber: 9

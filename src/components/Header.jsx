@@ -6,7 +6,7 @@ const Header = ({ onSubmit }) => {
     e.preventDefault()
     onSubmit(taskName)
 
-    setTaskName(' ')
+    setTaskName('')
   }
   return (
     <>
@@ -21,7 +21,7 @@ const Header = ({ onSubmit }) => {
             onChange={(event) => setTaskName(event.target.value)}
             className='  placeholder-style h-12 w-full rounded-[6px] bg-none  focus:outline-none '
             type='text'
-            placeholder='New task...'
+            placeholder='Write new task here...'
           />
           <button
             type='submit'

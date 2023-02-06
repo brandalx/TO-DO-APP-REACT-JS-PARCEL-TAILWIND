@@ -1,8 +1,10 @@
-const Footer_active = () => {
+const Footer_active = ({ activecount, totalcount }) => {
   return (
     <div className='mx-auto flex h-10 items-center '>
       <div className='mx-auto'>
-        <p className='text-center text-gray-400'>Made 4 out of 6</p>
+        <p className='text-center text-gray-400'>
+          Made {activecount} out of {totalcount}
+        </p>
       </div>
     </div>
   )
