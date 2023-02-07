@@ -27165,6 +27165,9 @@ function App() {
             task
         ]);
     };
+    const handleDelete = (task)=>{
+        setTaskList(taskList.filter((t)=>t !== task));
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default), {
             children: [
@@ -27172,7 +27175,7 @@ function App() {
                     onSubmit: doSubmit
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 26,
+                    lineNumber: 31,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainDefault.default), {
@@ -27180,15 +27183,16 @@ function App() {
                             name: task,
                             index: index + 1,
                             onCompleted: handleCompleted,
-                            completed: completedtaskList.includes(task)
+                            completed: completedtaskList.includes(task),
+                            onDelete: handleDelete
                         }, index, false, {
                             fileName: "src/App.jsx",
-                            lineNumber: 29,
+                            lineNumber: 34,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 27,
+                    lineNumber: 32,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerActiveDefault.default), {
@@ -27196,13 +27200,13 @@ function App() {
                     totalcount: taskList.length
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 38,
+                    lineNumber: 44,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/App.jsx",
-            lineNumber: 25,
+            lineNumber: 30,
             columnNumber: 7
         }, this)
     }, void 0, false);
@@ -27552,7 +27556,7 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Task = ({ name , index , onCompleted , completed  })=>{
+const Task = ({ name , index , onCompleted , completed , onDelete  })=>{
     // const [completed, setCompleted] = useState(false)
     const handdleChange = ()=>{
         // setCompleted(e.target.checked)
@@ -27600,6 +27604,7 @@ const Task = ({ name , index , onCompleted , completed  })=>{
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    onClick: ()=>onDelete(name),
                     className: "mr-2 transition-all hover:opacity-50",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: "mx-auto flex items-center",

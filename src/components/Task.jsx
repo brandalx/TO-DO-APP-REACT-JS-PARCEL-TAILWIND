@@ -1,5 +1,5 @@
 // import { useState } from 'react'
-const Task = ({ name, index, onCompleted, completed }) => {
+const Task = ({ name, index, onCompleted, completed, onDelete }) => {
   // const [completed, setCompleted] = useState(false)
   const handdleChange = () => {
     // setCompleted(e.target.checked)
@@ -22,7 +22,7 @@ const Task = ({ name, index, onCompleted, completed }) => {
             {index}. {name}
           </label>
         </div>
-        <button className='mr-2 transition-all hover:opacity-50'>
+        <button onClick={() => onDelete(name)} className='mr-2 transition-all hover:opacity-50'>
           <div className='mx-auto flex items-center'>
             <svg width='12' height='11' viewBox='0 0 12 11' fill='none' xmlns='http://www.w3.org/2000/svg'>
               <path

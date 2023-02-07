@@ -20,6 +20,11 @@ export function App() {
       setcompletedTaskList([...completedtaskList, task])
     }
   }
+
+  const handleDelete = (task) => {
+    setTaskList(taskList.filter((t) => t !== task))
+  }
+
   return (
     <>
       <Card>
@@ -32,6 +37,7 @@ export function App() {
               index={index + 1}
               onCompleted={handleCompleted}
               completed={completedtaskList.includes(task)}
+              onDelete={handleDelete}
             />
           ))}
         </Main>
