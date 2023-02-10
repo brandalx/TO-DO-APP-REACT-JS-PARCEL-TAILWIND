@@ -44,6 +44,12 @@ export function App() {
 
   const handleDelete = (task) => {
     setTaskList(taskList.filter((t) => t !== task))
+    // const taskListString = window.localStorage.getItem('taskList')
+
+    let parsed = JSON.parse(window.localStorage.getItem('taskList'))
+    let indexToDel = parsed.findIndex((t) => t == task)
+    let final = parsed.slice((indexToDel, +1))
+    window.localStorage.setItem('taskList', JSON.stringify(final))
   }
 
   return (
