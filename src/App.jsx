@@ -16,9 +16,13 @@ export function App() {
     // setTaskList(JSON.parse(window.localStorage.getItem('taskList')))
 
     // option two
-    const taskListString = window.localStorage.getItem('taskList')
-    const taskList = JSON.parse(taskListString)
-    setTaskList(taskList)
+    if (localStorage.getItem('taskList') == null) {
+      console.log('local storage is empry')
+    } else {
+      const taskListString = window.localStorage.getItem('taskList')
+      const taskList = JSON.parse(taskListString)
+      setTaskList(taskList)
+    }
   }, [])
 
   const [completedtaskList, setcompletedTaskList] = useState([])

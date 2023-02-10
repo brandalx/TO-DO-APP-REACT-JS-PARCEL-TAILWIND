@@ -27158,9 +27158,12 @@ function App() {
         //#option one (short)
         // setTaskList(JSON.parse(window.localStorage.getItem('taskList')))
         // option two
-        const taskListString = window.localStorage.getItem("taskList");
-        const taskList = JSON.parse(taskListString);
-        setTaskList(taskList);
+        if (localStorage.getItem("taskList") == null) console.log("local storage is empry");
+        else {
+            const taskListString = window.localStorage.getItem("taskList");
+            const taskList = JSON.parse(taskListString);
+            setTaskList(taskList);
+        }
     }, []);
     const [completedtaskList, setcompletedTaskList] = (0, _react.useState)([]);
     const doSubmit = (task)=>{
@@ -27192,7 +27195,7 @@ function App() {
                     onSubmit: doSubmit
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 48,
+                    lineNumber: 52,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainDefault.default), {
@@ -27204,12 +27207,12 @@ function App() {
                             onDelete: handleDelete
                         }, index, false, {
                             fileName: "src/App.jsx",
-                            lineNumber: 51,
+                            lineNumber: 55,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 49,
+                    lineNumber: 53,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerActiveDefault.default), {
@@ -27217,13 +27220,13 @@ function App() {
                     totalcount: taskList.length
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 61,
+                    lineNumber: 65,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/App.jsx",
-            lineNumber: 47,
+            lineNumber: 51,
             columnNumber: 7
         }, this)
     }, void 0, false);
