@@ -4,9 +4,14 @@ const Header = ({ onSubmit }) => {
 
   const doSubmit = (e) => {
     e.preventDefault()
-    onSubmit(taskName)
 
-    setTaskName('')
+    if (taskName.length < 6) {
+      console.log('Min length to add task is 6 caharacters but you entered ' + taskName.length)
+    } else {
+      onSubmit(taskName)
+
+      setTaskName('')
+    }
   }
   return (
     <>

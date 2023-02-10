@@ -385,6 +385,10 @@ img, video {
   border-radius: 4px;
 }
 
+.rounded {
+  border-radius: .25rem;
+}
+
 .rounded-t-lg {
   border-top-left-radius: .5rem;
   border-top-right-radius: .5rem;
@@ -392,6 +396,10 @@ img, video {
 
 .border-2 {
   border-width: 2px;
+}
+
+.border {
+  border-width: 1px;
 }
 
 .border-gray-300 {
@@ -402,6 +410,11 @@ img, video {
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+
+.border-red-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(248 113 113 / var(--tw-border-opacity));
 }
 
 .bg-gray-200 {
@@ -424,6 +437,11 @@ img, video {
   background-color: rgb(37 99 235 / var(--tw-bg-opacity));
 }
 
+.bg-red-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 226 226 / var(--tw-bg-opacity));
+}
+
 .bg-none {
   background-image: none;
 }
@@ -437,6 +455,26 @@ img, video {
   padding-right: 1rem;
 }
 
+.px-2\.5 {
+  padding-left: .625rem;
+  padding-right: .625rem;
+}
+
+.py-0\.5 {
+  padding-top: .125rem;
+  padding-bottom: .125rem;
+}
+
+.px-2 {
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+
+.py-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 .text-center {
   text-align: center;
 }
@@ -446,13 +484,27 @@ img, video {
   line-height: 1.5rem;
 }
 
+.text-xs {
+  font-size: .75rem;
+  line-height: 1rem;
+}
+
 .font-normal {
   font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
 }
 
 .text-gray-400 {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
+.text-red-800 {
+  --tw-text-opacity: 1;
+  color: rgb(153 27 27 / var(--tw-text-opacity));
 }
 
 .shadow-xl {
@@ -492,6 +544,18 @@ img, video {
 .focus\:outline-none:focus {
   outline-offset: 2px;
   outline: 2px solid #0000;
+}
+
+@media (prefers-color-scheme: dark) {
+  .dark\:bg-gray-700 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+  }
+
+  .dark\:text-red-400 {
+    --tw-text-opacity: 1;
+    color: rgb(248 113 113 / var(--tw-text-opacity));
+  }
 }
 
 /*# sourceMappingURL=index.ebeadb08.css.map */

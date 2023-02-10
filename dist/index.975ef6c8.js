@@ -27158,7 +27158,7 @@ function App() {
         //#option one (short)
         // setTaskList(JSON.parse(window.localStorage.getItem('taskList')))
         // option two
-        if (localStorage.getItem("taskList") == null) console.log("local storage is empry");
+        if (localStorage.getItem("taskList") == null) return 0;
         else {
             const taskListString = window.localStorage.getItem("taskList");
             const taskList = JSON.parse(taskListString);
@@ -27456,8 +27456,11 @@ const Header = ({ onSubmit  })=>{
     const [taskName, setTaskName] = (0, _react.useState)();
     const doSubmit = (e)=>{
         e.preventDefault();
-        onSubmit(taskName);
-        setTaskName("");
+        if (taskName.length < 6) console.log("Min length to add task is 6 caharacters but you entered " + taskName.length);
+        else {
+            onSubmit(taskName);
+            setTaskName("");
+        }
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
@@ -27475,7 +27478,7 @@ const Header = ({ onSubmit  })=>{
                         placeholder: "Write new task here..."
                     }, void 0, false, {
                         fileName: "src/components/Header.jsx",
-                        lineNumber: 19,
+                        lineNumber: 24,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -27494,33 +27497,33 @@ const Header = ({ onSubmit  })=>{
                                     fill: "white"
                                 }, void 0, false, {
                                     fileName: "src/components/Header.jsx",
-                                    lineNumber: 32,
+                                    lineNumber: 37,
                                     columnNumber: 17
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/Header.jsx",
-                                lineNumber: 31,
+                                lineNumber: 36,
                                 columnNumber: 15
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/Header.jsx",
-                            lineNumber: 30,
+                            lineNumber: 35,
                             columnNumber: 13
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/Header.jsx",
-                        lineNumber: 26,
+                        lineNumber: 31,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Header.jsx",
-                lineNumber: 14,
+                lineNumber: 19,
                 columnNumber: 9
             }, undefined)
         }, void 0, false, {
             fileName: "src/components/Header.jsx",
-            lineNumber: 13,
+            lineNumber: 18,
             columnNumber: 7
         }, undefined)
     }, void 0, false);

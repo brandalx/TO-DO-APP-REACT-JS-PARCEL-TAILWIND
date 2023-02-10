@@ -17,7 +17,7 @@ export function App() {
 
     // option two
     if (localStorage.getItem('taskList') == null) {
-      console.log('local storage is empry')
+      return 0
     } else {
       const taskListString = window.localStorage.getItem('taskList')
       const taskList = JSON.parse(taskListString)
