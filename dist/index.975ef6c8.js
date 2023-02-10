@@ -27151,12 +27151,29 @@ var _s = $RefreshSig$();
 function App() {
     _s();
     const [taskList, setTaskList] = (0, _react.useState)([]);
+    //option #1 for local storage call
+    // const [taskList, setTaskList] = useState( () => JSON.parse(window.localStorage.getItem('taskList')) )
+    //option #2 useEffect Hook
+    (0, _react.useEffect)(()=>{
+        //#option one (short)
+        // setTaskList(JSON.parse(window.localStorage.getItem('taskList')))
+        // option two
+        const taskListString = window.localStorage.getItem("taskList");
+        const taskList = JSON.parse(taskListString);
+        setTaskList(taskList);
+    }, []);
     const [completedtaskList, setcompletedTaskList] = (0, _react.useState)([]);
     const doSubmit = (task)=>{
         setTaskList([
             ...taskList,
             task
         ]);
+        const newTaskList = [
+            ...taskList,
+            task
+        ];
+        setTaskList(newTaskList);
+        window.localStorage.setItem("taskList", JSON.stringify(newTaskList));
     };
     const handleCompleted = (task)=>{
         if (completedtaskList.includes(task)) setcompletedTaskList(completedtaskList.filter((tasks)=>tasks !== task));
@@ -27175,7 +27192,7 @@ function App() {
                     onSubmit: doSubmit
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 31,
+                    lineNumber: 48,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainDefault.default), {
@@ -27187,12 +27204,12 @@ function App() {
                             onDelete: handleDelete
                         }, index, false, {
                             fileName: "src/App.jsx",
-                            lineNumber: 34,
+                            lineNumber: 51,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 32,
+                    lineNumber: 49,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerActiveDefault.default), {
@@ -27200,18 +27217,18 @@ function App() {
                     totalcount: taskList.length
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 44,
+                    lineNumber: 61,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/App.jsx",
-            lineNumber: 30,
+            lineNumber: 47,
             columnNumber: 7
         }, this)
     }, void 0, false);
 }
-_s(App, "UNQJLRPUNNDDXbUES6YPHvJ2jTc=");
+_s(App, "fdD7jwnnaQOpKHaV31wKKfXJkDc=");
 _c = App;
 var _c;
 $RefreshReg$(_c, "App");
@@ -27221,7 +27238,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./components/Card":"lWrQs","./components/Header":"knC38","./components/Main":"cL6ru","./components/Task":"bxGUs","./components/Footer_active":"4x8W9","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lWrQs":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./components/Card":"lWrQs","./components/Header":"knC38","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/Main":"cL6ru","./components/Task":"bxGUs","./components/Footer_active":"4x8W9","react":"21dqq"}],"lWrQs":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$76e8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27607,7 +27624,7 @@ const Task = ({ name , index , onCompleted , completed , onDelete  })=>{
                     onClick: ()=>onDelete(name),
                     className: "mr-2 transition-all hover:opacity-50",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "mx-auto flex items-center",
+                        className: " mx-auto flex items-center",
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
                             width: "12",
                             height: "11",

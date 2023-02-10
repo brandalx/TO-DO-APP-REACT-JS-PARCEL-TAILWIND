@@ -3,14 +3,31 @@ import Header from './components/Header'
 import Main from './components/Main'
 import Task from './components/Task'
 import Footer_active from './components/Footer_active'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export function App() {
   const [taskList, setTaskList] = useState([])
+  //option #1 for local storage call
+  // const [taskList, setTaskList] = useState( () => JSON.parse(window.localStorage.getItem('taskList')) )
+
+  //option #2 useEffect Hook
+  useEffect(() => {
+    //#option one (short)
+    // setTaskList(JSON.parse(window.localStorage.getItem('taskList')))
+
+    // option two
+    const taskListString = window.localStorage.getItem('taskList')
+    const taskList = JSON.parse(taskListString)
+    setTaskList(taskList)
+  }, [])
+
   const [completedtaskList, setcompletedTaskList] = useState([])
 
   const doSubmit = (task) => {
     setTaskList([...taskList, task])
+    const newTaskList = [...taskList, task]
+    setTaskList(newTaskList)
+    window.localStorage.setItem('taskList', JSON.stringify(newTaskList))
   }
 
   const handleCompleted = (task) => {
