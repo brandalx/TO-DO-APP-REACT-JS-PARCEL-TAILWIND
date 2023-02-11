@@ -39,8 +39,18 @@ export function App() {
       setcompletedTaskList(completedtaskList.filter((tasks) => tasks !== task))
     } else {
       setcompletedTaskList([...completedtaskList, task])
+      window.localStorage.setItem('completedTask', JSON.stringify(setcompletedTaskList))
     }
   }
+
+  // useEffect(() => {
+  //   if (localStorage.getItem('completedTask') == null) {
+  //     return 0
+  //   }
+  //   const completedToString = window.localStorage.getItem('completedTask')
+  //   const completedTasks = JSON.parse(completedToString)
+  //   setcompletedTaskList(completedTasks)
+  // }, [])
 
   const handleDelete = (task) => {
     setTaskList(taskList.filter((t) => t !== task))
@@ -57,16 +67,18 @@ export function App() {
       <Card>
         <Header onSubmit={doSubmit} />
         <Main>
-          {taskList.map((task, index) => (
-            <Task
-              key={index}
-              name={task}
-              index={index + 1}
-              onCompleted={handleCompleted}
-              completed={completedtaskList.includes(task)}
-              onDelete={handleDelete}
-            />
-          ))}
+          {taskList.map((task, index) => {
+            return (
+              <Task
+                key={index}
+                name={task}
+                index={index}
+                onCompleted={handleCompleted}
+                completed={completedtaskList.includes(task)}
+                onDelete={handleDelete}
+              />
+            )
+          })}
         </Main>
         <Footer_active activecount={completedtaskList.length} totalcount={taskList.length} />
         {/* <Footer_default /> */}

@@ -27180,11 +27180,22 @@ function App() {
     };
     const handleCompleted = (task)=>{
         if (completedtaskList.includes(task)) setcompletedTaskList(completedtaskList.filter((tasks)=>tasks !== task));
-        else setcompletedTaskList([
-            ...completedtaskList,
-            task
-        ]);
+        else {
+            setcompletedTaskList([
+                ...completedtaskList,
+                task
+            ]);
+            window.localStorage.setItem("completedTask", JSON.stringify(setcompletedTaskList));
+        }
     };
+    // useEffect(() => {
+    //   if (localStorage.getItem('completedTask') == null) {
+    //     return 0
+    //   }
+    //   const completedToString = window.localStorage.getItem('completedTask')
+    //   const completedTasks = JSON.parse(completedToString)
+    //   setcompletedTaskList(completedTasks)
+    // }, [])
     const handleDelete = (task)=>{
         setTaskList(taskList.filter((t)=>t !== task));
         // const taskListString = window.localStorage.getItem('taskList')
@@ -27200,24 +27211,26 @@ function App() {
                     onSubmit: doSubmit
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 58,
+                    lineNumber: 68,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainDefault.default), {
-                    children: taskList.map((task, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _taskDefault.default), {
+                    children: taskList.map((task, index)=>{
+                        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _taskDefault.default), {
                             name: task,
-                            index: index + 1,
+                            index: index,
                             onCompleted: handleCompleted,
                             completed: completedtaskList.includes(task),
                             onDelete: handleDelete
                         }, index, false, {
                             fileName: "src/App.jsx",
-                            lineNumber: 61,
-                            columnNumber: 13
-                        }, this))
+                            lineNumber: 72,
+                            columnNumber: 15
+                        }, this);
+                    })
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 59,
+                    lineNumber: 69,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerActiveDefault.default), {
@@ -27225,13 +27238,13 @@ function App() {
                     totalcount: taskList.length
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 71,
+                    lineNumber: 83,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/App.jsx",
-            lineNumber: 57,
+            lineNumber: 67,
             columnNumber: 7
         }, this)
     }, void 0, false);
