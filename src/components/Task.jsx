@@ -19,7 +19,7 @@ const Task = ({ name, index, onCompleted, completed, onDelete }) => {
             value={index}
           />
           <label htmlFor={index} id={index} className='m-0  text-base font-normal'>
-            {index}. {name}
+            {index + 1}. {name}
           </label>
         </div>
         <button onClick={() => onDelete(name)} className='mr-2 transition-all hover:opacity-50'>

@@ -27151,26 +27151,29 @@ var _s = $RefreshSig$();
 function App() {
     _s();
     const [taskList, setTaskList] = (0, _react.useState)([]);
-    //option #1 for local storage call
-    // const [taskList, setTaskList] = useState( () => JSON.parse(window.localStorage.getItem('taskList')) )
-    //option #2 useEffect Hook
+    const handleCompleted = (task)=>{
+        const newTaskList = completedtaskList.includes(task) ? completedtaskList.filter((tasks)=>tasks !== task) : [
+            ...completedtaskList,
+            task
+        ];
+        setcompletedTaskList(newTaskList);
+        window.localStorage.setItem("completedTask", JSON.stringify(newTaskList));
+    };
+    //unfortunately when deletes an task with checkbox completed and then adds an new item its pushes previus already deleted count
     (0, _react.useEffect)(()=>{
-        //#option one (short)
-        // setTaskList(JSON.parse(window.localStorage.getItem('taskList')))
-        // option two
-        if (localStorage.getItem("taskList") == null) return 0;
-        else {
-            const taskListString = window.localStorage.getItem("taskList");
+        const taskListString = window.localStorage.getItem("taskList");
+        if (taskListString) {
             const taskList = JSON.parse(taskListString);
             setTaskList(taskList);
+        }
+        const completedTaskListString = window.localStorage.getItem("completedTask");
+        if (completedTaskListString) {
+            const taskList = JSON.parse(completedTaskListString);
+            setcompletedTaskList(taskList);
         }
     }, []);
     const [completedtaskList, setcompletedTaskList] = (0, _react.useState)([]);
     const doSubmit = (task)=>{
-        setTaskList([
-            ...taskList,
-            task
-        ]);
         const newTaskList = [
             ...taskList,
             task
@@ -27178,31 +27181,17 @@ function App() {
         setTaskList(newTaskList);
         window.localStorage.setItem("taskList", JSON.stringify(newTaskList));
     };
-    const handleCompleted = (task)=>{
-        if (completedtaskList.includes(task)) setcompletedTaskList(completedtaskList.filter((tasks)=>tasks !== task));
-        else {
-            setcompletedTaskList([
-                ...completedtaskList,
-                task
-            ]);
-            window.localStorage.setItem("completedTask", JSON.stringify(setcompletedTaskList));
-        }
-    };
-    // useEffect(() => {
-    //   if (localStorage.getItem('completedTask') == null) {
-    //     return 0
-    //   }
-    //   const completedToString = window.localStorage.getItem('completedTask')
-    //   const completedTasks = JSON.parse(completedToString)
-    //   setcompletedTaskList(completedTasks)
-    // }, [])
     const handleDelete = (task)=>{
-        setTaskList(taskList.filter((t)=>t !== task));
-        // const taskListString = window.localStorage.getItem('taskList')
-        let parsed = JSON.parse(window.localStorage.getItem("taskList"));
-        let indexToDel = parsed.findIndex((t)=>t == task);
-        let final = parsed.slice((indexToDel, 1));
-        window.localStorage.setItem("taskList", JSON.stringify(final));
+        const newTaskList = taskList.filter((t)=>t !== task);
+        setTaskList(newTaskList);
+        window.localStorage.setItem("taskList", JSON.stringify(newTaskList));
+        window.localStorage.removeItem("completedTask", JSON.stringify(completedtaskList));
+    };
+    // this function created for count an completed tasks.
+    const makeCount = ()=>{
+        let countForTaskList = window.localStorage.getItem("completedTask");
+        if (!countForTaskList) return 0;
+        else return JSON.parse(countForTaskList).length;
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default), {
@@ -27211,7 +27200,7 @@ function App() {
                     onSubmit: doSubmit
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 68,
+                    lineNumber: 62,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainDefault.default), {
@@ -27224,27 +27213,27 @@ function App() {
                             onDelete: handleDelete
                         }, index, false, {
                             fileName: "src/App.jsx",
-                            lineNumber: 72,
+                            lineNumber: 66,
                             columnNumber: 15
                         }, this);
                     })
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 69,
+                    lineNumber: 63,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerActiveDefault.default), {
-                    activecount: completedtaskList.length,
+                    activecount: makeCount(),
                     totalcount: taskList.length
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 83,
+                    lineNumber: 77,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/App.jsx",
-            lineNumber: 67,
+            lineNumber: 61,
             columnNumber: 7
         }, this)
     }, void 0, false);
@@ -27629,7 +27618,7 @@ const Task = ({ name , index , onCompleted , completed , onDelete  })=>{
                             id: index,
                             className: "m-0 text-base font-normal",
                             children: [
-                                index,
+                                index + 1,
                                 ". ",
                                 name
                             ]
