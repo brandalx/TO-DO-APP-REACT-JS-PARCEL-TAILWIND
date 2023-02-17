@@ -16,8 +16,6 @@ export function App() {
     window.localStorage.setItem('completedTask', JSON.stringify(newTaskList))
   }
 
-  //unfortunately when deletes an task with checkbox completed and then adds an new item its pushes previus already deleted count
-
   useEffect(() => {
     const taskListString = window.localStorage.getItem('taskList')
     if (taskListString) {
@@ -43,17 +41,10 @@ export function App() {
     const newTaskList = taskList.filter((t) => t !== task)
     setTaskList(newTaskList)
     window.localStorage.setItem('taskList', JSON.stringify(newTaskList))
+    const newCompTaskList = completedtaskList.filter((t) => t !== task)
 
-    window.localStorage.removeItem('completedTask', JSON.stringify(completedtaskList))
-  }
-  // this function created for count an completed tasks.
-  const makeCount = () => {
-    let countForTaskList = window.localStorage.getItem('completedTask')
-    if (!countForTaskList) {
-      return 0
-    } else {
-      return JSON.parse(countForTaskList).length
-    }
+    window.localStorage.setItem('completedTask', JSON.stringify(newCompTaskList))
+    setcompletedTaskList(newCompTaskList)
   }
 
   return (
@@ -74,7 +65,7 @@ export function App() {
             )
           })}
         </Main>
-        <Footer_active activecount={makeCount()} totalcount={taskList.length} />
+        <Footer_active activecount={completedtaskList.length} totalcount={taskList.length} />
         {/* <Footer_default /> */}
       </Card>
     </>

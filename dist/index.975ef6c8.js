@@ -27159,7 +27159,6 @@ function App() {
         setcompletedTaskList(newTaskList);
         window.localStorage.setItem("completedTask", JSON.stringify(newTaskList));
     };
-    //unfortunately when deletes an task with checkbox completed and then adds an new item its pushes previus already deleted count
     (0, _react.useEffect)(()=>{
         const taskListString = window.localStorage.getItem("taskList");
         if (taskListString) {
@@ -27185,13 +27184,9 @@ function App() {
         const newTaskList = taskList.filter((t)=>t !== task);
         setTaskList(newTaskList);
         window.localStorage.setItem("taskList", JSON.stringify(newTaskList));
-        window.localStorage.removeItem("completedTask", JSON.stringify(completedtaskList));
-    };
-    // this function created for count an completed tasks.
-    const makeCount = ()=>{
-        let countForTaskList = window.localStorage.getItem("completedTask");
-        if (!countForTaskList) return 0;
-        else return JSON.parse(countForTaskList).length;
+        const newCompTaskList = completedtaskList.filter((t)=>t !== task);
+        window.localStorage.setItem("completedTask", JSON.stringify(newCompTaskList));
+        setcompletedTaskList(newCompTaskList);
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default), {
@@ -27200,7 +27195,7 @@ function App() {
                     onSubmit: doSubmit
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 62,
+                    lineNumber: 53,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainDefault.default), {
@@ -27213,27 +27208,27 @@ function App() {
                             onDelete: handleDelete
                         }, index, false, {
                             fileName: "src/App.jsx",
-                            lineNumber: 66,
+                            lineNumber: 57,
                             columnNumber: 15
                         }, this);
                     })
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 63,
+                    lineNumber: 54,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerActiveDefault.default), {
-                    activecount: makeCount(),
+                    activecount: completedtaskList.length,
                     totalcount: taskList.length
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 77,
+                    lineNumber: 68,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/App.jsx",
-            lineNumber: 61,
+            lineNumber: 52,
             columnNumber: 7
         }, this)
     }, void 0, false);
