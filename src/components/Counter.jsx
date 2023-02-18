@@ -1,4 +1,4 @@
-const Footer_active = ({ activecount, totalcount }) => {
+const Counter = ({ activecount, totalcount }) => {
   return (
     <div className='mx-auto flex h-10 items-center '>
       <div className='mx-auto'>
@@ -9,4 +9,4 @@ const Footer_active = ({ activecount, totalcount }) => {
     </div>
   )
 }
-export default Footer_active
+export default Counter

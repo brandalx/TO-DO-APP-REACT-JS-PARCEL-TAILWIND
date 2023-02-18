@@ -2,16 +2,16 @@ import Card from './components/Card'
 import Header from './components/Header'
 import Main from './components/Main'
 import Task from './components/Task'
-import Footer_active from './components/Footer_active'
+import Counter from './components/Counter'
 import { useEffect, useState } from 'react'
 
 export function App() {
   const [taskList, setTaskList] = useState([])
 
   const handleCompleted = (task) => {
-    const newTaskList = completedtaskList.includes(task)
-      ? completedtaskList.filter((tasks) => tasks !== task)
-      : [...completedtaskList, task]
+    const newTaskList = completedTaskList.includes(task)
+      ? completedTaskList.filter((tasks) => tasks !== task)
+      : [...completedTaskList, task]
     setcompletedTaskList(newTaskList)
     window.localStorage.setItem('completedTask', JSON.stringify(newTaskList))
   }
@@ -29,7 +29,7 @@ export function App() {
     }
   }, [])
 
-  const [completedtaskList, setcompletedTaskList] = useState([])
+  const [completedTaskList, setcompletedTaskList] = useState([])
 
   const doSubmit = (task) => {
     const newTaskList = [...taskList, task]
@@ -41,7 +41,7 @@ export function App() {
     const newTaskList = taskList.filter((t) => t !== task)
     setTaskList(newTaskList)
     window.localStorage.setItem('taskList', JSON.stringify(newTaskList))
-    const newCompTaskList = completedtaskList.filter((t) => t !== task)
+    const newCompTaskList = completedTaskList.filter((t) => t !== task)
 
     window.localStorage.setItem('completedTask', JSON.stringify(newCompTaskList))
     setcompletedTaskList(newCompTaskList)
@@ -59,13 +59,13 @@ export function App() {
                 name={task}
                 index={index}
                 onCompleted={handleCompleted}
-                completed={completedtaskList.includes(task)}
+                completed={completedTaskList.includes(task)}
                 onDelete={handleDelete}
               />
             )
           })}
         </Main>
-        <Footer_active activecount={completedtaskList.length} totalcount={taskList.length} />
+        <Counter activecount={completedTaskList.length} totalcount={taskList.length} />
         {/* <Footer_default /> */}
       </Card>
     </>

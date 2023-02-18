@@ -27144,16 +27144,16 @@ var _main = require("./components/Main");
 var _mainDefault = parcelHelpers.interopDefault(_main);
 var _task = require("./components/Task");
 var _taskDefault = parcelHelpers.interopDefault(_task);
-var _footerActive = require("./components/Footer_active");
-var _footerActiveDefault = parcelHelpers.interopDefault(_footerActive);
+var _counter = require("./components/Counter");
+var _counterDefault = parcelHelpers.interopDefault(_counter);
 var _react = require("react");
 var _s = $RefreshSig$();
 function App() {
     _s();
     const [taskList, setTaskList] = (0, _react.useState)([]);
     const handleCompleted = (task)=>{
-        const newTaskList = completedtaskList.includes(task) ? completedtaskList.filter((tasks)=>tasks !== task) : [
-            ...completedtaskList,
+        const newTaskList = completedTaskList.includes(task) ? completedTaskList.filter((tasks)=>tasks !== task) : [
+            ...completedTaskList,
             task
         ];
         setcompletedTaskList(newTaskList);
@@ -27171,7 +27171,7 @@ function App() {
             setcompletedTaskList(taskList);
         }
     }, []);
-    const [completedtaskList, setcompletedTaskList] = (0, _react.useState)([]);
+    const [completedTaskList, setcompletedTaskList] = (0, _react.useState)([]);
     const doSubmit = (task)=>{
         const newTaskList = [
             ...taskList,
@@ -27184,7 +27184,7 @@ function App() {
         const newTaskList = taskList.filter((t)=>t !== task);
         setTaskList(newTaskList);
         window.localStorage.setItem("taskList", JSON.stringify(newTaskList));
-        const newCompTaskList = completedtaskList.filter((t)=>t !== task);
+        const newCompTaskList = completedTaskList.filter((t)=>t !== task);
         window.localStorage.setItem("completedTask", JSON.stringify(newCompTaskList));
         setcompletedTaskList(newCompTaskList);
     };
@@ -27204,7 +27204,7 @@ function App() {
                             name: task,
                             index: index,
                             onCompleted: handleCompleted,
-                            completed: completedtaskList.includes(task),
+                            completed: completedTaskList.includes(task),
                             onDelete: handleDelete
                         }, index, false, {
                             fileName: "src/App.jsx",
@@ -27217,8 +27217,8 @@ function App() {
                     lineNumber: 54,
                     columnNumber: 9
                 }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerActiveDefault.default), {
-                    activecount: completedtaskList.length,
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _counterDefault.default), {
+                    activecount: completedTaskList.length,
                     totalcount: taskList.length
                 }, void 0, false, {
                     fileName: "src/App.jsx",
@@ -27233,7 +27233,7 @@ function App() {
         }, this)
     }, void 0, false);
 }
-_s(App, "fdD7jwnnaQOpKHaV31wKKfXJkDc=");
+_s(App, "Z4gG+23hCwzS+nn1q2HrATduH04=");
 _c = App;
 var _c;
 $RefreshReg$(_c, "App");
@@ -27243,7 +27243,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./components/Card":"lWrQs","./components/Header":"knC38","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/Main":"cL6ru","./components/Task":"bxGUs","./components/Footer_active":"4x8W9","react":"21dqq"}],"lWrQs":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./components/Card":"lWrQs","./components/Header":"knC38","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/Main":"cL6ru","./components/Task":"bxGUs","react":"21dqq","./components/Counter":"6Ol5I"}],"lWrQs":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$76e8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27684,17 +27684,17 @@ $RefreshReg$(_c, "Task");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4x8W9":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$bafb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6Ol5I":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$74c5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$bafb.prelude(module);
+$parcel$ReactRefreshHelpers$74c5.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Footer_active = ({ activecount , totalcount  })=>{
+const Counter = ({ activecount , totalcount  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "mx-auto flex h-10 items-center ",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27708,27 +27708,27 @@ const Footer_active = ({ activecount , totalcount  })=>{
                     totalcount
                 ]
             }, void 0, true, {
-                fileName: "src/components/Footer_active.jsx",
+                fileName: "src/components/Counter.jsx",
                 lineNumber: 5,
                 columnNumber: 9
             }, undefined)
         }, void 0, false, {
-            fileName: "src/components/Footer_active.jsx",
+            fileName: "src/components/Counter.jsx",
             lineNumber: 4,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
-        fileName: "src/components/Footer_active.jsx",
+        fileName: "src/components/Counter.jsx",
         lineNumber: 3,
         columnNumber: 5
     }, undefined);
 };
-_c = Footer_active;
-exports.default = Footer_active;
+_c = Counter;
+exports.default = Counter;
 var _c;
-$RefreshReg$(_c, "Footer_active");
+$RefreshReg$(_c, "Counter");
 
-  $parcel$ReactRefreshHelpers$bafb.postlude(module);
+  $parcel$ReactRefreshHelpers$74c5.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;

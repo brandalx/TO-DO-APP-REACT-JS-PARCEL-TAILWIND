@@ -1,4 +1,4 @@
-const Footer_default = () => {
+const Empty = () => {
   return (
     <div className='mx-auto flex h-20 items-center '>
       <div className='mx-auto'>
@@ -7,4 +7,4 @@ const Footer_default = () => {
     </div>
   )
 }
-export default Footer_default
+export default Empty
