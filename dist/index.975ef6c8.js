@@ -27157,20 +27157,20 @@ function App() {
             task
         ];
         setcompletedTaskList(newTaskList);
-        window.localStorage.setItem("completedTask", JSON.stringify(newTaskList));
+    // window.localStorage.setItem('completedTask', JSON.stringify(newTaskList))
     };
-    (0, _react.useEffect)(()=>{
-        const taskListString = window.localStorage.getItem("taskList");
-        if (taskListString) {
-            const taskList = JSON.parse(taskListString);
-            setTaskList(taskList);
-        }
-        const completedTaskListString = window.localStorage.getItem("completedTask");
-        if (completedTaskListString) {
-            const taskList = JSON.parse(completedTaskListString);
-            setcompletedTaskList(taskList);
-        }
-    }, []);
+    // useEffect(() => {
+    //   const taskListString = window.localStorage.getItem('taskList')
+    //   if (taskListString) {
+    //     const taskList = JSON.parse(taskListString)
+    //     setTaskList(taskList)
+    //   }
+    //   const completedTaskListString = window.localStorage.getItem('completedTask')
+    //   if (completedTaskListString) {
+    //     const taskList = JSON.parse(completedTaskListString)
+    //     setcompletedTaskList(taskList)
+    //   }
+    // }, [])
     const [completedTaskList, setcompletedTaskList] = (0, _react.useState)([]);
     const doSubmit = (task)=>{
         const newTaskList = [
@@ -27178,14 +27178,14 @@ function App() {
             task
         ];
         setTaskList(newTaskList);
-        window.localStorage.setItem("taskList", JSON.stringify(newTaskList));
+    // window.localStorage.setItem('taskList', JSON.stringify(newTaskList))
     };
     const handleDelete = (task)=>{
         const newTaskList = taskList.filter((t)=>t !== task);
         setTaskList(newTaskList);
-        window.localStorage.setItem("taskList", JSON.stringify(newTaskList));
+        // window.localStorage.setItem('taskList', JSON.stringify(newTaskList))
         const newCompTaskList = completedTaskList.filter((t)=>t !== task);
-        window.localStorage.setItem("completedTask", JSON.stringify(newCompTaskList));
+        // window.localStorage.setItem('completedTask', JSON.stringify(newCompTaskList))
         setcompletedTaskList(newCompTaskList);
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
@@ -27233,7 +27233,7 @@ function App() {
         }, this)
     }, void 0, false);
 }
-_s(App, "Z4gG+23hCwzS+nn1q2HrATduH04=");
+_s(App, "ZCB9+RsTIdJFonImxHdoiaHOYLs=");
 _c = App;
 var _c;
 $RefreshReg$(_c, "App");
