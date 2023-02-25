@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Main from './components/Main'
 import Task from './components/Task'
 import Counter from './components/Counter'
+import uuid from 'uuid'
 import { useEffect, useState } from 'react'
 
 export function App() {
@@ -32,7 +33,12 @@ export function App() {
   const [completedTaskList, setcompletedTaskList] = useState([])
 
   const doSubmit = (task) => {
-    const newTaskList = [...taskList, task]
+    const newTaskItem = {
+      id: uuid.v4(),
+      name: task,
+      completed: false
+    }
+    const newTaskList = [...taskList, newTaskItem]
     setTaskList(newTaskList)
     // window.localStorage.setItem('taskList', JSON.stringify(newTaskList))
   }
@@ -51,7 +57,7 @@ export function App() {
     <>
       <Card>
         <Header onSubmit={doSubmit} />
-        <Main>
+        {/* <Main>
           {taskList.map((task, index) => {
             return (
               <Task
@@ -64,7 +70,7 @@ export function App() {
               />
             )
           })}
-        </Main>
+        </Main> */}
         <Counter activecount={completedTaskList.length} totalcount={taskList.length} />
         {/* <Footer_default /> */}
       </Card>
