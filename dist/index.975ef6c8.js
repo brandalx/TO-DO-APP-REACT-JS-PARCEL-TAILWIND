@@ -27147,19 +27147,22 @@ var _taskDefault = parcelHelpers.interopDefault(_task);
 var _counter = require("./components/Counter");
 var _counterDefault = parcelHelpers.interopDefault(_counter);
 var _uuid = require("uuid");
-var _uuidDefault = parcelHelpers.interopDefault(_uuid);
 var _react = require("react");
 var _s = $RefreshSig$();
 function App() {
     _s();
     const [taskList, setTaskList] = (0, _react.useState)([]);
-    const handleCompleted = (task)=>{
-        const newTaskList = completedTaskList.includes(task) ? completedTaskList.filter((tasks)=>tasks !== task) : [
-            ...completedTaskList,
-            task
-        ];
-        setcompletedTaskList(newTaskList);
-    // window.localStorage.setItem('completedTask', JSON.stringify(newTaskList))
+    const handleCompleted = (checked, id)=>{
+        // const newTaskList = completedTaskList.includes(task)
+        //   ? completedTaskList.filter((tasks) => tasks !== task)
+        //   : [...completedTaskList, task]
+        // setcompletedTaskList(newTaskList)
+        // window.localStorage.setItem('completedTask', JSON.stringify(newTaskList))
+        const newTaskList = taskList.map((task)=>{
+            if (task.id == id) task.completed = checked;
+            return task;
+        });
+        setTaskList(newTaskList);
     };
     // useEffect(() => {
     //   const taskListString = window.localStorage.getItem('taskList')
@@ -27173,10 +27176,10 @@ function App() {
     //     setcompletedTaskList(taskList)
     //   }
     // }, [])
-    const [completedTaskList, setcompletedTaskList] = (0, _react.useState)([]);
+    // const [completedTaskList, setcompletedTaskList] = useState([])
     const doSubmit = (task)=>{
         const newTaskItem = {
-            id: (0, _uuidDefault.default).v4(),
+            id: (0, _uuid.v4)(),
             name: task,
             completed: false
         };
@@ -27190,10 +27193,10 @@ function App() {
     const handleDelete = (task)=>{
         const newTaskList = taskList.filter((t)=>t !== task);
         setTaskList(newTaskList);
-        // window.localStorage.setItem('taskList', JSON.stringify(newTaskList))
-        const newCompTaskList = completedTaskList.filter((t)=>t !== task);
-        // window.localStorage.setItem('completedTask', JSON.stringify(newCompTaskList))
-        setcompletedTaskList(newCompTaskList);
+    // window.localStorage.setItem('taskList', JSON.stringify(newTaskList))
+    // const newCompTaskList = completedTaskList.filter((t) => t !== task)
+    // window.localStorage.setItem('completedTask', JSON.stringify(newCompTaskList))
+    // setcompletedTaskList(newCompTaskList)
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default), {
@@ -27202,26 +27205,37 @@ function App() {
                     onSubmit: doSubmit
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 59,
+                    lineNumber: 67,
                     columnNumber: 9
                 }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _counterDefault.default), {
-                    activecount: completedTaskList.length,
-                    totalcount: taskList.length
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainDefault.default), {
+                    children: taskList.map((task, index)=>{
+                        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _taskDefault.default), {
+                            // name={task}
+                            index: index,
+                            onCompleted: (checked)=>handleCompleted(checked, task.id),
+                            completed: task.completed,
+                            onDelete: handleDelete
+                        }, task.id, false, {
+                            fileName: "src/App.jsx",
+                            lineNumber: 71,
+                            columnNumber: 15
+                        }, this);
+                    })
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 74,
+                    lineNumber: 68,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/App.jsx",
-            lineNumber: 58,
+            lineNumber: 66,
             columnNumber: 7
         }, this)
     }, void 0, false);
 }
-_s(App, "ZCB9+RsTIdJFonImxHdoiaHOYLs=");
+_s(App, "mW6q2/agXv25Ej2PBKHyLCwtTHc=");
 _c = App;
 var _c;
 $RefreshReg$(_c, "App");
@@ -27575,10 +27589,10 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 const Task = ({ name , index , onCompleted , completed , onDelete  })=>{
     // const [completed, setCompleted] = useState(false)
-    const handdleChange = ()=>{
-        // setCompleted(e.target.checked)
-        onCompleted(name);
-    };
+    // const handdleChange = () => {
+    //   // setCompleted(e.target.checked)
+    //   onCompleted(name)
+    // }
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "px-4 ",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27589,7 +27603,7 @@ const Task = ({ name , index , onCompleted , completed , onDelete  })=>{
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                             checked: completed,
-                            onChange: handdleChange,
+                            onChange: (e)=>e.target.checked,
                             className: "form-checkbox m-4 rounded-[4px] border-2 border-gray-200 ",
                             type: "checkbox",
                             id: index,
@@ -27756,6 +27770,98 @@ var _stringifyJsDefault = parcelHelpers.interopDefault(_stringifyJs);
 var _parseJs = require("./parse.js");
 var _parseJsDefault = parcelHelpers.interopDefault(_parseJs);
 
-},{"./v1.js":false,"./v3.js":false,"./v4.js":false,"./v5.js":false,"./nil.js":false,"./version.js":false,"./validate.js":false,"./stringify.js":false,"./parse.js":false,"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["1xC6H","jC2qd","8lqZg"], "8lqZg", "parcelRequire69e5")
+},{"./v1.js":false,"./v3.js":false,"./v4.js":"8zJtu","./v5.js":false,"./nil.js":false,"./version.js":false,"./validate.js":"eHPgI","./stringify.js":"5Y9F1","./parse.js":false,"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8zJtu":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _nativeJs = require("./native.js");
+var _nativeJsDefault = parcelHelpers.interopDefault(_nativeJs);
+var _rngJs = require("./rng.js");
+var _rngJsDefault = parcelHelpers.interopDefault(_rngJs);
+var _stringifyJs = require("./stringify.js");
+function v4(options, buf, offset) {
+    if ((0, _nativeJsDefault.default).randomUUID && !buf && !options) return (0, _nativeJsDefault.default).randomUUID();
+    options = options || {};
+    const rnds = options.random || (options.rng || (0, _rngJsDefault.default))(); // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
+    rnds[6] = rnds[6] & 0x0f | 0x40;
+    rnds[8] = rnds[8] & 0x3f | 0x80; // Copy bytes to buffer, if provided
+    if (buf) {
+        offset = offset || 0;
+        for(let i = 0; i < 16; ++i)buf[offset + i] = rnds[i];
+        return buf;
+    }
+    return (0, _stringifyJs.unsafeStringify)(rnds);
+}
+exports.default = v4;
+
+},{"./native.js":"lYayS","./rng.js":"2psyE","./stringify.js":"5Y9F1","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lYayS":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+const randomUUID = typeof crypto !== "undefined" && crypto.randomUUID && crypto.randomUUID.bind(crypto);
+exports.default = {
+    randomUUID
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2psyE":[function(require,module,exports) {
+// Unique ID creation requires a high quality random # generator. In the browser we therefore
+// require the crypto API and do not support built-in fallback to lower quality random number
+// generators (like Math.random()).
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+let getRandomValues;
+const rnds8 = new Uint8Array(16);
+function rng() {
+    // lazy load so that environments that need to polyfill have a chance to do so
+    if (!getRandomValues) {
+        // getRandomValues needs to be invoked in a context where "this" is a Crypto implementation.
+        getRandomValues = typeof crypto !== "undefined" && crypto.getRandomValues && crypto.getRandomValues.bind(crypto);
+        if (!getRandomValues) throw new Error("crypto.getRandomValues() not supported. See https://github.com/uuidjs/uuid#getrandomvalues-not-supported");
+    }
+    return getRandomValues(rnds8);
+}
+exports.default = rng;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5Y9F1":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "unsafeStringify", ()=>unsafeStringify);
+var _validateJs = require("./validate.js");
+var _validateJsDefault = parcelHelpers.interopDefault(_validateJs);
+/**
+ * Convert array of 16 byte values to UUID string format of the form:
+ * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+ */ const byteToHex = [];
+for(let i = 0; i < 256; ++i)byteToHex.push((i + 0x100).toString(16).slice(1));
+function unsafeStringify(arr, offset = 0) {
+    // Note: Be careful editing this code!  It's been tuned for performance
+    // and works in ways you may not expect. See https://github.com/uuidjs/uuid/pull/434
+    return (byteToHex[arr[offset + 0]] + byteToHex[arr[offset + 1]] + byteToHex[arr[offset + 2]] + byteToHex[arr[offset + 3]] + "-" + byteToHex[arr[offset + 4]] + byteToHex[arr[offset + 5]] + "-" + byteToHex[arr[offset + 6]] + byteToHex[arr[offset + 7]] + "-" + byteToHex[arr[offset + 8]] + byteToHex[arr[offset + 9]] + "-" + byteToHex[arr[offset + 10]] + byteToHex[arr[offset + 11]] + byteToHex[arr[offset + 12]] + byteToHex[arr[offset + 13]] + byteToHex[arr[offset + 14]] + byteToHex[arr[offset + 15]]).toLowerCase();
+}
+function stringify(arr, offset = 0) {
+    const uuid = unsafeStringify(arr, offset); // Consistency check for valid UUID.  If this throws, it's likely due to one
+    // of the following:
+    // - One or more input array values don't map to a hex octet (leading to
+    // "undefined" in the uuid)
+    // - Invalid input values for the RFC `version` or `variant` fields
+    if (!(0, _validateJsDefault.default)(uuid)) throw TypeError("Stringified UUID is invalid");
+    return uuid;
+}
+exports.default = stringify;
+
+},{"./validate.js":"eHPgI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eHPgI":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _regexJs = require("./regex.js");
+var _regexJsDefault = parcelHelpers.interopDefault(_regexJs);
+function validate(uuid) {
+    return typeof uuid === "string" && (0, _regexJsDefault.default).test(uuid);
+}
+exports.default = validate;
+
+},{"./regex.js":"bUa5g","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bUa5g":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+exports.default = /^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["1xC6H","jC2qd","8lqZg"], "8lqZg", "parcelRequire69e5")
 
 //# sourceMappingURL=index.975ef6c8.js.map

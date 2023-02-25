@@ -3,18 +3,26 @@ import Header from './components/Header'
 import Main from './components/Main'
 import Task from './components/Task'
 import Counter from './components/Counter'
-import uuid from 'uuid'
+import { v4 as uuidv4 } from 'uuid'
 import { useEffect, useState } from 'react'
 
 export function App() {
   const [taskList, setTaskList] = useState([])
 
-  const handleCompleted = (task) => {
-    const newTaskList = completedTaskList.includes(task)
-      ? completedTaskList.filter((tasks) => tasks !== task)
-      : [...completedTaskList, task]
-    setcompletedTaskList(newTaskList)
+  const handleCompleted = (checked, id) => {
+    // const newTaskList = completedTaskList.includes(task)
+    //   ? completedTaskList.filter((tasks) => tasks !== task)
+    //   : [...completedTaskList, task]
+    // setcompletedTaskList(newTaskList)
     // window.localStorage.setItem('completedTask', JSON.stringify(newTaskList))
+
+    const newTaskList = taskList.map((task) => {
+      if (task.id == id) {
+        task.completed = checked
+      }
+      return task
+    })
+    setTaskList(newTaskList)
   }
 
   // useEffect(() => {
@@ -30,11 +38,11 @@ export function App() {
   //   }
   // }, [])
 
-  const [completedTaskList, setcompletedTaskList] = useState([])
+  // const [completedTaskList, setcompletedTaskList] = useState([])
 
   const doSubmit = (task) => {
     const newTaskItem = {
-      id: uuid.v4(),
+      id: uuidv4(),
       name: task,
       completed: false
     }
@@ -47,31 +55,31 @@ export function App() {
     const newTaskList = taskList.filter((t) => t !== task)
     setTaskList(newTaskList)
     // window.localStorage.setItem('taskList', JSON.stringify(newTaskList))
-    const newCompTaskList = completedTaskList.filter((t) => t !== task)
+    // const newCompTaskList = completedTaskList.filter((t) => t !== task)
 
     // window.localStorage.setItem('completedTask', JSON.stringify(newCompTaskList))
-    setcompletedTaskList(newCompTaskList)
+    // setcompletedTaskList(newCompTaskList)
   }
 
   return (
     <>
       <Card>
         <Header onSubmit={doSubmit} />
-        {/* <Main>
+        <Main>
           {taskList.map((task, index) => {
             return (
               <Task
-                key={index}
-                name={task}
+                key={task.id}
+                // name={task}
                 index={index}
-                onCompleted={handleCompleted}
-                completed={completedTaskList.includes(task)}
+                onCompleted={(checked) => handleCompleted(checked, task.id)}
+                completed={task.completed}
                 onDelete={handleDelete}
               />
             )
           })}
-        </Main> */}
-        <Counter activecount={completedTaskList.length} totalcount={taskList.length} />
+        </Main>
+        {/* <Counter activecount={completedTaskList.length} totalcount={taskList.length} /> */}
         {/* <Footer_default /> */}
       </Card>
     </>
