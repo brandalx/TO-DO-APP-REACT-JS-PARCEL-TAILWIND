@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 const Header = ({ onSubmit }) => {
   const [taskName, setTaskName] = useState()
 
@@ -13,6 +13,11 @@ const Header = ({ onSubmit }) => {
       setTaskName('')
     }
   }
+
+  useEffect(() => {
+    setTaskName(' ')
+  }, [])
+
   return (
     <>
       <header className='flex h-20 items-center justify-between rounded-t-lg bg-blue-50 p-2'>
@@ -22,6 +27,7 @@ const Header = ({ onSubmit }) => {
           className='mx-2 flex w-full items-center justify-between rounded-[6px] border-2 border-gray-300 bg-white '
         >
           <input
+            id='inputid'
             value={taskName}
             onChange={(event) => setTaskName(event.target.value)}
             className='  placeholder-style h-12 w-full rounded-[6px] bg-none  focus:outline-none '

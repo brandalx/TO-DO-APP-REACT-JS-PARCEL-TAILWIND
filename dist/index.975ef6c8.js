@@ -27255,7 +27255,7 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 const Card = (props)=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "mx-auto w-full max-w-xl space-y-4 rounded-lg bg-white shadow-xl",
+        className: " mx-auto w-full max-w-xl space-y-4 rounded-lg bg-white shadow-xl",
         children: props.children
     }, void 0, false, {
         fileName: "src/components/Card.jsx",
@@ -27459,6 +27459,9 @@ const Header = ({ onSubmit  })=>{
             setTaskName("");
         }
     };
+    (0, _react.useEffect)(()=>{
+        setTaskName(" ");
+    }, []);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
             className: "flex h-20 items-center justify-between rounded-t-lg bg-blue-50 p-2",
@@ -27468,6 +27471,7 @@ const Header = ({ onSubmit  })=>{
                 className: "mx-2 flex w-full items-center justify-between rounded-[6px] border-2 border-gray-300 bg-white ",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        id: "inputid",
                         value: taskName,
                         onChange: (event)=>setTaskName(event.target.value),
                         className: " placeholder-style h-12 w-full rounded-[6px] bg-none focus:outline-none ",
@@ -27475,7 +27479,7 @@ const Header = ({ onSubmit  })=>{
                         placeholder: "Write new task here..."
                     }, void 0, false, {
                         fileName: "src/components/Header.jsx",
-                        lineNumber: 24,
+                        lineNumber: 29,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -27494,38 +27498,38 @@ const Header = ({ onSubmit  })=>{
                                     fill: "white"
                                 }, void 0, false, {
                                     fileName: "src/components/Header.jsx",
-                                    lineNumber: 37,
+                                    lineNumber: 43,
                                     columnNumber: 17
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/Header.jsx",
-                                lineNumber: 36,
+                                lineNumber: 42,
                                 columnNumber: 15
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/Header.jsx",
-                            lineNumber: 35,
+                            lineNumber: 41,
                             columnNumber: 13
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/Header.jsx",
-                        lineNumber: 31,
+                        lineNumber: 37,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Header.jsx",
-                lineNumber: 19,
+                lineNumber: 24,
                 columnNumber: 9
             }, undefined)
         }, void 0, false, {
             fileName: "src/components/Header.jsx",
-            lineNumber: 18,
+            lineNumber: 23,
             columnNumber: 7
         }, undefined)
     }, void 0, false);
 };
-_s(Header, "3ShPrAahrjt2ez5tJuPK/POdNG4=");
+_s(Header, "z6/aGF5Ql6tn0f6CoVdcCMlWTjo=");
 _c = Header;
 exports.default = Header;
 var _c;
