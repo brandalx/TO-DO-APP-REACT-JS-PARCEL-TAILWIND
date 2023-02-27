@@ -27154,29 +27154,20 @@ function App() {
     const [taskList, setTaskList] = (0, _react.useState)([]);
     const countCompletedTask = taskList.reduce((acc, value)=>value.completed ? acc + 1 : acc, 0);
     const handleCompleted = (checked, id)=>{
-        // const newTaskList = completedTaskList.includes(task)
-        //   ? completedTaskList.filter((tasks) => tasks !== task)
-        //   : [...completedTaskList, task]
-        // setcompletedTaskList(newTaskList)
-        // window.localStorage.setItem('completedTask', JSON.stringify(newTaskList))
         const newTaskList = taskList.map((task)=>{
             if (task.id == id) task.completed = checked;
             return task;
         });
+        window.localStorage.setItem("taskList", JSON.stringify(newTaskList));
         setTaskList(newTaskList);
     };
-    // useEffect(() => {
-    //   const taskListString = window.localStorage.getItem('taskList')
-    //   if (taskListString) {
-    //     const taskList = JSON.parse(taskListString)
-    //     setTaskList(taskList)
-    //   }
-    //   const completedTaskListString = window.localStorage.getItem('completedTask')
-    //   if (completedTaskListString) {
-    //     const taskList = JSON.parse(completedTaskListString)
-    //     setcompletedTaskList(taskList)
-    //   }
-    // }, [])
+    (0, _react.useEffect)(()=>{
+        const taskListString = window.localStorage.getItem("taskList");
+        if (taskListString) {
+            const taskList = JSON.parse(taskListString);
+            setTaskList(taskList);
+        }
+    }, []);
     const doSubmit = (task)=>{
         const newTaskItem = {
             id: (0, _uuid.v4)(),
@@ -27188,15 +27179,12 @@ function App() {
             newTaskItem
         ];
         setTaskList(newTaskList);
-    // window.localStorage.setItem('taskList', JSON.stringify(newTaskList))
+        window.localStorage.setItem("taskList", JSON.stringify(newTaskList));
     };
     const handleDelete = (id)=>{
         const newTaskList = taskList.filter((task)=>task.id !== id);
         setTaskList(newTaskList);
-    // window.localStorage.setItem('taskList', JSON.stringify(newTaskList))
-    // const newCompTaskList = completedTaskList.filter((t) => t !== task)
-    // window.localStorage.setItem('completedTask', JSON.stringify(newCompTaskList))
-    // setcompletedTaskList(newCompTaskList)
+        window.localStorage.setItem("taskList", JSON.stringify(newTaskList));
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default), {
@@ -27205,7 +27193,7 @@ function App() {
                     onSubmit: doSubmit
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 66,
+                    lineNumber: 53,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainDefault.default), {
@@ -27218,13 +27206,13 @@ function App() {
                             onDelete: ()=>handleDelete(task.id)
                         }, task.id, false, {
                             fileName: "src/App.jsx",
-                            lineNumber: 70,
+                            lineNumber: 57,
                             columnNumber: 15
                         }, this);
                     })
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 67,
+                    lineNumber: 54,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _counterDefault.default), {
@@ -27232,18 +27220,18 @@ function App() {
                     totalcount: taskList.length
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 81,
+                    lineNumber: 68,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/App.jsx",
-            lineNumber: 65,
+            lineNumber: 52,
             columnNumber: 7
         }, this)
     }, void 0, false);
 }
-_s(App, "mW6q2/agXv25Ej2PBKHyLCwtTHc=");
+_s(App, "V/HibS7/p29J40czAjUipCO+awM=");
 _c = App;
 var _c;
 $RefreshReg$(_c, "App");

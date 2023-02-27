@@ -11,33 +11,23 @@ export function App() {
   const countCompletedTask = taskList.reduce((acc, value) => (value.completed ? acc + 1 : acc), 0)
 
   const handleCompleted = (checked, id) => {
-    // const newTaskList = completedTaskList.includes(task)
-    //   ? completedTaskList.filter((tasks) => tasks !== task)
-    //   : [...completedTaskList, task]
-    // setcompletedTaskList(newTaskList)
-    // window.localStorage.setItem('completedTask', JSON.stringify(newTaskList))
-
     const newTaskList = taskList.map((task) => {
       if (task.id == id) {
         task.completed = checked
       }
       return task
     })
+    window.localStorage.setItem('taskList', JSON.stringify(newTaskList))
     setTaskList(newTaskList)
   }
 
-  // useEffect(() => {
-  //   const taskListString = window.localStorage.getItem('taskList')
-  //   if (taskListString) {
-  //     const taskList = JSON.parse(taskListString)
-  //     setTaskList(taskList)
-  //   }
-  //   const completedTaskListString = window.localStorage.getItem('completedTask')
-  //   if (completedTaskListString) {
-  //     const taskList = JSON.parse(completedTaskListString)
-  //     setcompletedTaskList(taskList)
-  //   }
-  // }, [])
+  useEffect(() => {
+    const taskListString = window.localStorage.getItem('taskList')
+    if (taskListString) {
+      const taskList = JSON.parse(taskListString)
+      setTaskList(taskList)
+    }
+  }, [])
 
   const doSubmit = (task) => {
     const newTaskItem = {
@@ -47,17 +37,14 @@ export function App() {
     }
     const newTaskList = [...taskList, newTaskItem]
     setTaskList(newTaskList)
-    // window.localStorage.setItem('taskList', JSON.stringify(newTaskList))
+    window.localStorage.setItem('taskList', JSON.stringify(newTaskList))
   }
 
   const handleDelete = (id) => {
     const newTaskList = taskList.filter((task) => task.id !== id)
     setTaskList(newTaskList)
-    // window.localStorage.setItem('taskList', JSON.stringify(newTaskList))
-    // const newCompTaskList = completedTaskList.filter((t) => t !== task)
 
-    // window.localStorage.setItem('completedTask', JSON.stringify(newCompTaskList))
-    // setcompletedTaskList(newCompTaskList)
+    window.localStorage.setItem('taskList', JSON.stringify(newTaskList))
   }
 
   return (
