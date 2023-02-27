@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react'
 
 export function App() {
   const [taskList, setTaskList] = useState([])
+  const countCompletedTask = taskList.reduce((acc, value) => (value.completed ? acc + 1 : acc), 0)
 
   const handleCompleted = (checked, id) => {
     // const newTaskList = completedTaskList.includes(task)
@@ -49,8 +50,8 @@ export function App() {
     // window.localStorage.setItem('taskList', JSON.stringify(newTaskList))
   }
 
-  const handleDelete = (task) => {
-    const newTaskList = taskList.filter((t) => t !== task)
+  const handleDelete = (id) => {
+    const newTaskList = taskList.filter((task) => task.id !== id)
     setTaskList(newTaskList)
     // window.localStorage.setItem('taskList', JSON.stringify(newTaskList))
     // const newCompTaskList = completedTaskList.filter((t) => t !== task)
@@ -72,12 +73,12 @@ export function App() {
                 index={index}
                 onCompleted={(checked) => handleCompleted(checked, task.id)}
                 completed={task.completed}
-                onDelete={handleDelete}
+                onDelete={() => handleDelete(task.id)}
               />
             )
           })}
         </Main>
-        {/* <Counter activecount={completedTaskList.length} totalcount={taskList.length} /> */}
+        <Counter activecount={countCompletedTask} totalcount={taskList.length} />
         {/* <Footer_default /> */}
       </Card>
     </>

@@ -27152,6 +27152,7 @@ var _s = $RefreshSig$();
 function App() {
     _s();
     const [taskList, setTaskList] = (0, _react.useState)([]);
+    const countCompletedTask = taskList.reduce((acc, value)=>value.completed ? acc + 1 : acc, 0);
     const handleCompleted = (checked, id)=>{
         // const newTaskList = completedTaskList.includes(task)
         //   ? completedTaskList.filter((tasks) => tasks !== task)
@@ -27176,7 +27177,6 @@ function App() {
     //     setcompletedTaskList(taskList)
     //   }
     // }, [])
-    // const [completedTaskList, setcompletedTaskList] = useState([])
     const doSubmit = (task)=>{
         const newTaskItem = {
             id: (0, _uuid.v4)(),
@@ -27190,8 +27190,8 @@ function App() {
         setTaskList(newTaskList);
     // window.localStorage.setItem('taskList', JSON.stringify(newTaskList))
     };
-    const handleDelete = (task)=>{
-        const newTaskList = taskList.filter((t)=>t !== task);
+    const handleDelete = (id)=>{
+        const newTaskList = taskList.filter((task)=>task.id !== id);
         setTaskList(newTaskList);
     // window.localStorage.setItem('taskList', JSON.stringify(newTaskList))
     // const newCompTaskList = completedTaskList.filter((t) => t !== task)
@@ -27205,7 +27205,7 @@ function App() {
                     onSubmit: doSubmit
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 67,
+                    lineNumber: 66,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainDefault.default), {
@@ -27215,22 +27215,30 @@ function App() {
                             index: index,
                             onCompleted: (checked)=>handleCompleted(checked, task.id),
                             completed: task.completed,
-                            onDelete: handleDelete
+                            onDelete: ()=>handleDelete(task.id)
                         }, task.id, false, {
                             fileName: "src/App.jsx",
-                            lineNumber: 71,
+                            lineNumber: 70,
                             columnNumber: 15
                         }, this);
                     })
                 }, void 0, false, {
                     fileName: "src/App.jsx",
-                    lineNumber: 68,
+                    lineNumber: 67,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _counterDefault.default), {
+                    activecount: countCompletedTask,
+                    totalcount: taskList.length
+                }, void 0, false, {
+                    fileName: "src/App.jsx",
+                    lineNumber: 81,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/App.jsx",
-            lineNumber: 66,
+            lineNumber: 65,
             columnNumber: 7
         }, this)
     }, void 0, false);
@@ -27635,7 +27643,7 @@ const Task = ({ name , index , onCompleted , completed , onDelete  })=>{
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                    onClick: ()=>onDelete(name),
+                    onClick: onDelete,
                     className: "mr-2 transition-all hover:opacity-50",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: " mx-auto flex items-center",
