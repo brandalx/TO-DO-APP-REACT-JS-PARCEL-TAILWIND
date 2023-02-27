@@ -38,8 +38,6 @@ export function App() {
   //   }
   // }, [])
 
-  // const [completedTaskList, setcompletedTaskList] = useState([])
-
   const doSubmit = (task) => {
     const newTaskItem = {
       id: uuidv4(),
@@ -70,7 +68,7 @@ export function App() {
             return (
               <Task
                 key={task.id}
-                // name={task}
+                name={task.name}
                 index={index}
                 onCompleted={(checked) => handleCompleted(checked, task.id)}
                 completed={task.completed}

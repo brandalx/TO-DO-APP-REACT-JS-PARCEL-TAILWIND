@@ -27211,7 +27211,7 @@ function App() {
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainDefault.default), {
                     children: taskList.map((task, index)=>{
                         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _taskDefault.default), {
-                            // name={task}
+                            name: task.name,
                             index: index,
                             onCompleted: (checked)=>handleCompleted(checked, task.id),
                             completed: task.completed,
@@ -27603,7 +27603,7 @@ const Task = ({ name , index , onCompleted , completed , onDelete  })=>{
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                             checked: completed,
-                            onChange: (e)=>e.target.checked,
+                            onChange: (e)=>onCompleted(e.target.checked),
                             className: "form-checkbox m-4 rounded-[4px] border-2 border-gray-200 ",
                             type: "checkbox",
                             id: index,
